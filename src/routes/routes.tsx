@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { HomePage } from "../pages/home-page";
+import { HomeRepos } from "../pages/home-repos";
+import { Repo } from "../pages/repo";
 
 export function AppRoutes() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomeRepos />} />
+        <Route path="/repos/*" element={<Repo />} />
       </Routes>
     </Router>
   );
