@@ -1,4 +1,8 @@
 export type Repository = {
-  full_name: string;
-  description: string;
+  name: string;
+  full_name?: string;
+  description?: string;
+  homepage?: string;
+  html_url?: string;
+  language?: string;
 };
