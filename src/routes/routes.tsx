@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { HomeRepos } from "../pages/home-repos";
+import { HomeRepos } from "../pages/home-repos/home-repos";
 import { Repo } from "../pages/repo";
 
 export function AppRoutes() {

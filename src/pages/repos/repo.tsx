@@ -1,14 +1,14 @@
-import { useQueryClient } from "react-query";
 import { useParams } from "react-router-dom";
+import { RepoPageContainer } from "./styles";
 
 export function Repo() {
     const params = useParams()
     const currentrepository = params['*'] as string;
 
     return (
-        <div>
+        <RepoPageContainer>
             <h1>{currentrepository}</h1>
-        </div>
+        </RepoPageContainer>
 
     )
 }

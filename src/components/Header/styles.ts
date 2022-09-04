@@ -6,5 +6,5 @@ export const HeaderWrapper = styled.header`
 
   height: 3rem;
 
-  background-color: #333;
+  background-color: ${(props) => props.theme.tertiaryColor};
 `;

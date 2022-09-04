@@ -4,11 +4,15 @@ import App from './App'
 
 import { QueryClientProvider } from 'react-query'
 import { queryClient } from './services/queryClient'
+import { theme } from './styles/styles'
+import { ThemeProvider } from 'styled-components'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </QueryClientProvider>
   </React.StrictMode>
 )

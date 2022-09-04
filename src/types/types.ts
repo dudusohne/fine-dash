@@ -6,3 +6,7 @@ export type Repository = {
   html_url?: string;
   language?: string;
 };
+
+export type Myself = {
+  //profile data
+}

@@ -1,14 +1,18 @@
 import { Box, BoxDescription, BoxTitle } from "./styles";
 import { Repository } from "../../types"
 
-export function ReposBox({ name, description, homepage, html_url, language }: Repository) {
+interface BoxProps extends Repository {
+    onClickBox: () => void;
+}
+
+export function ReposBox({ name, description, homepage, html_url, language, onClickBox }: BoxProps) {
     return (
-        <Box>
+        <Box onClick={onClickBox}>
             <BoxTitle>{name}</BoxTitle>
             <BoxDescription>{description}</BoxDescription>
-            <p>{homepage}</p>
-            <p>{html_url}</p>
-            <p>{language}</p>
+            <BoxDescription>{homepage}</BoxDescription>
+            <BoxDescription>{html_url}</BoxDescription>
+            <BoxDescription>{language}</BoxDescription>
         </Box>
     )
 }
