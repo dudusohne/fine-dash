@@ -8,7 +8,7 @@ import { ReposBox } from '../../components/ReposBox'
 import { HomeReposContainer, ReposWrapper } from './styles'
 
 export function HomeRepos() {
-    const { data, isFetching } = useQuery<Repository[]>('repos', async () => {
+    const { data, isFetching, error } = useQuery<Repository[]>('repos', async () => {
         const response = await axios.get('https://api.github.com/users/dudusohne/repos')
         console.log(response.data)
         return response.data;
@@ -25,7 +25,15 @@ export function HomeRepos() {
                 {isFetching && <p>Carregando...</p>}
                 {data?.map(repo => {
                     return (
-                        <ReposBox name={repo.name} description={repo.description} onClickBox={() => navigate(`/${repo.name}`)} />
+                        <ReposBox
+                            key={repo.id}
+                            id={repo.id}
+                            name={repo.name}
+                            description={repo.description}
+                            onClickBox={() => navigate(`/${repo.name}`)}
+                            created_at={repo.created_at}
+                            homepage={repo.homepage}
+                        />
                     )
                 })}
             </ReposWrapper>

@@ -4,7 +4,7 @@ import App from './App'
 
 import { QueryClientProvider } from 'react-query'
 import { queryClient } from './services/queryClient'
-import { theme } from './styles/styles'
+import { theme } from './theme/theme'
 import { ThemeProvider } from 'styled-components'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

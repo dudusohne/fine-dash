@@ -8,6 +8,7 @@ export function Repo() {
     return (
         <RepoPageContainer>
             <h1>{currentrepository}</h1>
+            <h2>teste</h2>
         </RepoPageContainer>
 
     )
