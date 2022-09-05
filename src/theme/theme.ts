@@ -5,9 +5,11 @@ export const theme = {
     tertiary: "#FF5A5F",
     fourth: "#087E8B",
   },
+
   text: {
     primary: "",
   },
+
   size: {
     sm: "16px",
     md: "20px",

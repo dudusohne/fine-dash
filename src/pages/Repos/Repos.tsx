@@ -1,0 +1,57 @@
+import axios from "axios";
+import { useQuery } from "react-query";
+import { useNavigate, useParams } from "react-router-dom";
+
+import { Header } from "../../components/Header";
+import { Background } from "../../components/Header/styles";
+import { Repository } from "../../types";
+import { BackIcon, FrameBottom, FrameHeader, FrameMiddle, RepoContainer, RepoDescription, RepoFrame, RepoPage, RepoTitle, RepoWrapperItem, Spinner } from "./styles";
+import { SvgObject } from "./svg/svg";
+
+export function Repo() {
+    const params = useParams()
+    const currentrepository = params['*'] as string;
+
+    const { data: repo, isFetching } = useQuery<Repository>('repo', async () => {
+        const response = await axios.get(`https://api.github.com/repos/dudusohne/${currentrepository}`)
+        return response.data;
+    })
+
+    const navigate = useNavigate()
+
+    return (
+        <RepoPage>
+            <Header />
+            <SvgObject />
+            <RepoContainer>
+                {!isFetching ?
+                    <RepoFrame>
+                        <FrameHeader>
+                            <RepoTitle>{repo?.name}</RepoTitle>
+                            <BackIcon onClick={() => navigate(-1)} />
+                        </FrameHeader>
+                        <FrameMiddle>
+                            <RepoWrapperItem>
+                                <RepoDescription>{repo?.description}</RepoDescription>
+                            </RepoWrapperItem>
+                            <RepoWrapperItem>
+                                <RepoDescription>{repo?.homepage}</RepoDescription>
+                            </RepoWrapperItem>
+                            <RepoWrapperItem>
+                                <RepoDescription>{repo?.html_url}</RepoDescription>
+                            </RepoWrapperItem>
+                            <RepoWrapperItem>
+                                <RepoDescription>{repo?.created_at}</RepoDescription>
+                            </RepoWrapperItem>
+                        </FrameMiddle>
+                        <FrameBottom>
+                            <RepoDescription>ID: {repo?.id}</RepoDescription>
+                        </FrameBottom>
+                    </RepoFrame>
+                    :
+                    <Background />
+                }
+            </RepoContainer>
+        </RepoPage>
+    )
+}

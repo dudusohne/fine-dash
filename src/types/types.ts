@@ -6,9 +6,16 @@ export type Repository = {
   homepage?: string;
   html_url?: string;
   language?: string;
-  created_at: Date;
+  created_at: string;
 };
 
 export type Myself = {
-  //profile data
+  name?: string;
+  avatar_url?: string;
+  bio?: string;
+  company?: string;
+  created_at?: string;
+  location?: string;
+  followers?: number;
+  following?: number;
 }

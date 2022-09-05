@@ -1,16 +1,23 @@
-import { BottomContainer, Box, BoxDescription, BoxInfo, BoxTitle } from "./styles";
+import { BottomContainer, Box, BoxDescription, BoxInfo, BoxTitle, Divider } from "./styles";
+import { LanguageChip, LanguageText } from "./components/LanguageChip/styles";
+import { LinkChip, LinkText } from "./components/LinkChip/styles";
 import { Repository } from "../../types"
-import { Link } from "react-router-dom";
 
 interface BoxProps extends Repository {
     onClickBox: () => void;
 }
 
-export function ReposBox({ name, description, homepage, html_url, language, onClickBox, id, created_at }: BoxProps) {
+export function ReposBox({ name, description, homepage, language, onClickBox, id, created_at }: BoxProps) {
     return (
         <Box onClick={onClickBox}>
             <BoxTitle>{name}</BoxTitle>
-            <BoxDescription>{description}</BoxDescription>
+            {description &&
+                <>
+                    <Divider />
+                    <BoxDescription>{description}</BoxDescription>
+                </>
+            }
+            <Divider />
             <BottomContainer>
                 <BoxInfo>
                     <>
@@ -18,9 +25,19 @@ export function ReposBox({ name, description, homepage, html_url, language, onCl
                     </>
                 </BoxInfo>
                 <BoxInfo>ID: {id}</BoxInfo>
-                <BoxInfo>{homepage}</BoxInfo>
-                <BoxDescription>{language}</BoxDescription>
             </BottomContainer>
+            {homepage &&
+                <LinkChip>
+                    <LinkText>
+                        {homepage}
+                    </LinkText>
+                </LinkChip>
+            }
+            {language &&
+                <LanguageChip>
+                    <LanguageText>{language}</LanguageText>
+                </LanguageChip>
+            }
         </Box>
     )
 }
