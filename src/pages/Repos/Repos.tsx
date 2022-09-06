@@ -3,7 +3,6 @@ import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Header } from "../../components/Header";
-import { Background } from "../../components/Header/styles";
 import { Repository } from "../../types";
 import { BackIcon, FrameBottom, FrameHeader, FrameMiddle, RepoContainer, RepoDescription, RepoFrame, RepoPage, RepoTitle, RepoWrapperItem, Spinner } from "./styles";
 import { SvgObject } from "./svg/svg";
@@ -49,7 +48,7 @@ export function Repo() {
                         </FrameBottom>
                     </RepoFrame>
                     :
-                    <Background />
+                    <Spinner />
                 }
             </RepoContainer>
         </RepoPage>
