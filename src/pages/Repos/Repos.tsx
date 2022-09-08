@@ -21,7 +21,7 @@ export function Repo() {
     return (
         <RepoPage>
             <Header />
-            <SvgObject />
+            {/* <SvgObject /> */}
             <RepoContainer>
                 {!isFetching ?
                     <RepoFrame>
