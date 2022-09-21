@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useQuery } from 'react-query'
 import { Myself } from '../../types'
-import { Background, HeaderWrapper, UserImage, UserName } from './styles'
+import { HeaderWrapper, UserImage, UserName } from './styles'
 
 export function Header() {
     const { data: user } = useQuery<Myself>('user', async () => {
