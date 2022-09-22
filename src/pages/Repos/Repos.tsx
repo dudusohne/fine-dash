@@ -2,9 +2,9 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { BackIcon, FrameBottom, FrameHeader, FrameMiddle, RepoContainer, RepoDescription, RepoFrame, RepoPage, RepoTitle, RepoWrapperItem, Spinner } from "./styles.ts";
 import { Header } from "../../components/Header";
 import { Repository } from "../../types";
-import { BackIcon, FrameBottom, FrameHeader, FrameMiddle, RepoContainer, RepoDescription, RepoFrame, RepoPage, RepoTitle, RepoWrapperItem, Spinner } from "./styles";
 
 export function Repo() {
     const params = useParams()
