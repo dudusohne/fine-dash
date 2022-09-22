@@ -30,4 +30,5 @@ Need navbar n/or sidebar?
 Initiate the types thinking in the objects that will be used.
 How should use fetching: axios, react-query or what.
 
-- 3 
+- 3 -
+
