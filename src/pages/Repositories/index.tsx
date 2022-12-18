@@ -7,7 +7,7 @@ import { Header } from '../../components/Header'
 import { ReposBox } from '../../components/ReposBox'
 import { HomeReposContainer, ReposWrapper, Spinner } from './styles'
 
-export function HomeRepos() {
+export function Repositories() {
     const { data, isFetching } = useQuery<Repository[]>('repos', async () => {
         const response = await axios.get('https://api.github.com/users/dudusohne/repos')
         return response.data;

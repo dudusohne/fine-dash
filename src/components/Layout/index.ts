@@ -8,3 +8,13 @@ export const Layout = styled.div`
   background-attachment: fixed;
   background-size: cover;
 `
+
+export const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
+export const FlexCol = styled.div`
+  display: flex;
+  flex-direction: column;
+`

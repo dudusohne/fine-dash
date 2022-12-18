@@ -39,3 +39,16 @@ export const Background = styled.div`
   animation: ${slide} 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
 `;
+
+export const PathnameTitle = styled.span`
+  font-size: ${(props) => props.theme.size.lg};
+  font-family: ${(props) => props.theme.fontFamily};
+`
+
+export const PathnameContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: ${(props) => props.theme.color.primary};
+  padding: 6px;
+  margin-top: 2.4rem;
+`
