@@ -1,11 +1,26 @@
 import { GithubIcon, IconTitle, MenuButtonContainer } from "./styles";
 
-export function MenuButton() {
+interface MenuProps {
+    wich?: string;
+    active?: boolean;
+}
+
+export function MenuButton({ wich, active }: MenuProps) {
 
     return (
-        <MenuButtonContainer>
-            <GithubIcon />
-            <IconTitle>GITHUB</IconTitle>
+        <MenuButtonContainer isActive={active ?? false}>
+            {wich === "github" &&
+                <>
+                    <GithubIcon />
+                    <IconTitle>GITHUB</IconTitle>
+                </>
+            }
+            {wich === "home" &&
+                <>
+                    <GithubIcon />
+                    <IconTitle>GITHUB</IconTitle>
+                </>
+            }
         </MenuButtonContainer>
     )
 }

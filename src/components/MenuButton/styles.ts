@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Github } from '@styled-icons/bootstrap/Github'
 
-export const MenuButtonContainer = styled.button`
+export const MenuButtonContainer = styled.button<{isActive: boolean}>`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -13,6 +13,15 @@ export const MenuButtonContainer = styled.button`
     background-color: ${props => props.theme.color.secondary};
     border-radius: 8px;
     padding: 4px;
+
+    :hover {
+        cursor: pointer
+    }
+
+    ${props => props.isActive && `
+        background-color: red;
+        border-color: ${(props: any) => props.theme.color.secondary};
+    `}
 `
 
 export const GithubIcon = styled(Github)`
