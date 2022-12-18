@@ -18,37 +18,38 @@ export function Repo() {
     const navigate = useNavigate()
 
     return (
-        <RepoPage>
-            <Header />
-            <RepoContainer>
-                {!isFetching ?
-                    <RepoFrame>
-                        <FrameHeader>
-                            <RepoTitle>{repo?.name}</RepoTitle>
-                            <BackIcon onClick={() => navigate(-1)} />
-                        </FrameHeader>
-                        <FrameMiddle>
-                            <RepoWrapperItem>
-                                <RepoDescription>{repo?.description}</RepoDescription>
-                            </RepoWrapperItem>
-                            <RepoWrapperItem>
-                                <RepoDescription>{repo?.homepage}</RepoDescription>
-                            </RepoWrapperItem>
-                            <RepoWrapperItem>
-                                <RepoDescription>{repo?.html_url}</RepoDescription>
-                            </RepoWrapperItem>
-                            <RepoWrapperItem>
-                                <RepoDescription>{repo?.created_at}</RepoDescription>
-                            </RepoWrapperItem>
-                        </FrameMiddle>
-                        <FrameBottom>
-                            <RepoDescription>ID: {repo?.id}</RepoDescription>
-                        </FrameBottom>
-                    </RepoFrame>
-                    :
-                    <Spinner />
-                }
-            </RepoContainer>
-        </RepoPage>
+        <></>
+        // <RepoPage>
+        //     <Header />
+        //     <RepoContainer>
+        //         {!isFetching ?
+        //             <RepoFrame>
+        //                 <FrameHeader>
+        //                     <RepoTitle>{repo?.name}</RepoTitle>
+        //                     <BackIcon onClick={() => navigate(-1)} />
+        //                 </FrameHeader>
+        //                 <FrameMiddle>
+        //                     <RepoWrapperItem>
+        //                         <RepoDescription>{repo?.description}</RepoDescription>
+        //                     </RepoWrapperItem>
+        //                     <RepoWrapperItem>
+        //                         <RepoDescription>{repo?.homepage}</RepoDescription>
+        //                     </RepoWrapperItem>
+        //                     <RepoWrapperItem>
+        //                         <RepoDescription>{repo?.html_url}</RepoDescription>
+        //                     </RepoWrapperItem>
+        //                     <RepoWrapperItem>
+        //                         <RepoDescription>{repo?.created_at}</RepoDescription>
+        //                     </RepoWrapperItem>
+        //                 </FrameMiddle>
+        //                 <FrameBottom>
+        //                     <RepoDescription>ID: {repo?.id}</RepoDescription>
+        //                 </FrameBottom>
+        //             </RepoFrame>
+        //             :
+        //             <Spinner />
+        //         }
+        //     </RepoContainer>
+        // </RepoPage>
     )
 }
