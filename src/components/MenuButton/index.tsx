@@ -1,26 +1,25 @@
+import { useNavigate } from "react-router-dom";
 import { GithubIcon, HomeIcon, IconTitle, MenuButtonContainer } from "./styles";
 
 interface MenuProps {
-    wich?: string;
+    label?: string;
     active?: boolean;
+    pathname?: string;
 }
 
-export function MenuButton({ wich, active }: MenuProps) {
+export function MenuButton({ label, active, pathname }: MenuProps) {
+    const navigate = useNavigate()
 
     return (
-        <MenuButtonContainer isActive={active ?? false}>
-            {wich === "github" &&
-                <>
+        <div style={{ display: 'flex', flexDirection: 'column' }} onClick={() => navigate(`${pathname}`)}>
+            <MenuButtonContainer isActive={active ?? false}>
+                {label === "github" &&
                     <GithubIcon isActive={active ?? false} />
-                    <IconTitle isActive={active ?? false}>GITHUB</IconTitle>
-                </>
-            }
-            {wich === "home" &&
-                <>
+                }
+                {label === "home" &&
                     <HomeIcon isActive={active ?? false} />
-                    <IconTitle isActive={active ?? false}>HOME</IconTitle>
-                </>
-            }
-        </MenuButtonContainer>
+                }
+            </MenuButtonContainer>
+        </div>
     )
 }

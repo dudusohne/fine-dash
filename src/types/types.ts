@@ -19,3 +19,11 @@ export type Myself = {
   followers?: number;
   following?: number;
 }
+
+export type UserTime = {
+  datetime?: string;
+  day_of_week?: number;
+  day_of_year?: number;
+  timezone?: string;
+  week_number?: number;
+}

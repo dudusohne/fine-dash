@@ -8,7 +8,7 @@ import { HeaderWrapper, PathnameContainer, PathnameTitle, UserImage, UserName } 
 import { FlexRow } from '../Layout';
 
 export function Header() {
-    const { data: user } = useQuery<Myself>('user', async () => {
+    const { data: user, isFetching: isFetchingUser } = useQuery<Myself>('user', async () => {
         const response = await axios.get('https://api.github.com/users/dudusohne')
         return response.data;
     }, {
@@ -17,12 +17,9 @@ export function Header() {
 
     const location = useLocation();
 
-    //TODO: remove this later
-    console.log(location.pathname)
-
     function handlePathName(path: string) {
         if (path === '/repositories') {
-            return 'REPOSITÓRIOS DO GITHUB'
+            return 'GITHUB REPOSITORIES'
         }
 
         if (path === '/') {
@@ -32,13 +29,9 @@ export function Header() {
 
     return (
         <HeaderWrapper>
-            <FlexRow style={{ columnGap: '8px' }}>
-                <NavLink to={'repositories'}>
-                    <MenuButton wich="github" active={location.pathname === '/repositories'} />
-                </NavLink>
-                <NavLink to={'/'}>
-                    <MenuButton wich="home" active={location.pathname === '/'} />
-                </NavLink>
+            <FlexRow style={{ columnGap: '8px', alignItems: 'center' }}>
+                <MenuButton label="github" pathname="/repositories" active={location.pathname === '/repositories'} />
+                <MenuButton label="home" pathname="/" active={location.pathname === '/'} />
             </FlexRow>
             <PathnameContainer>
                 <PathnameTitle>{handlePathName(location.pathname)}</PathnameTitle>

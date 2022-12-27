@@ -41,14 +41,18 @@ export const Background = styled.div`
 `;
 
 export const PathnameTitle = styled.span`
-  font-size: ${(props) => props.theme.size.lg};
+  font-size: ${(props) => props.theme.size.md};
   font-family: ${(props) => props.theme.fontFamily};
+  color: ${(props) => props.theme.color.secondary};
 `
 
 export const PathnameContainer = styled.div`
   display: flex;
   flex-direction: row;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
   background-color: ${(props) => props.theme.color.primary};
-  padding: 6px;
+  padding-block: 1px;
+  padding-inline: 12px;
   margin-top: 2.4rem;
 `
