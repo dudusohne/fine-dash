@@ -12,6 +12,8 @@ export function DateTime({ time }: UserDateTime) {
     return (
         <TimeContainer>
             <p>{date.toLocaleTimeString()}</p>
+            <p>You from: {time.timezone}</p>
+            <p>Week day: {time.day_of_week}</p>
         </TimeContainer>
     )
 }
