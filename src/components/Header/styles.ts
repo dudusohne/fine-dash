@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { float, slide } from "../../theme/animations";
+import { animated } from "@react-spring/web";
 
 export const HeaderWrapper = styled.header`
   display: flex;
@@ -15,7 +16,7 @@ export const HeaderWrapper = styled.header`
   z-index: 12;
 `;
 
-export const UserImage = styled.img`
+export const UserImage = styled(animated.img)`
   width: 50px;
   border-radius: 50%;
   margin-top: 40px;

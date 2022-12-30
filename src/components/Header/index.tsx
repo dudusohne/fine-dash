@@ -6,6 +6,7 @@ import { Myself } from '../../types'
 import { MenuButton } from '../MenuButton'
 import { HeaderWrapper, PathnameContainer, PathnameTitle, UserImage, UserName } from './styles'
 import { FlexRow } from '../Layout';
+import { animated, useSpring } from '@react-spring/web';
 
 export function Header() {
     const { data: user, isFetching: isFetchingUser } = useQuery<Myself>('user', async () => {
@@ -13,6 +14,11 @@ export function Header() {
         return response.data;
     }, {
         staleTime: 4000 * 60 // 4 minutes
+    })
+
+    const springs = useSpring({
+        from: { x: 0 },
+        to: { x: 100 },
     })
 
     const location = useLocation();
@@ -30,8 +36,8 @@ export function Header() {
     return (
         <HeaderWrapper>
             <FlexRow style={{ columnGap: '8px', alignItems: 'center' }}>
-                <MenuButton label="github" pathname="/repositories" active={location.pathname === '/repositories'} />
-                <MenuButton label="home" pathname="/" active={location.pathname === '/'} />
+                <MenuButton label="github" pathname="/repositories" active={location.pathname === '/repositories'} springs={springs} />
+                <MenuButton label="home" pathname="/" active={location.pathname === '/'} springs={springs} />
             </FlexRow>
             <PathnameContainer>
                 <PathnameTitle>{handlePathName(location.pathname)}</PathnameTitle>

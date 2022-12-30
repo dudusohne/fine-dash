@@ -18,3 +18,8 @@ export const FlexCol = styled.div`
   display: flex;
   flex-direction: column;
 `
+
+export const Divider = styled.hr<{color?: string}>`
+  width: 100%;
+  border-top: 1px solid ${props => props.color ? `${props.color}` : props.theme.color.primary};
+`;

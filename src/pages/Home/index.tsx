@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { useQuery } from "react-query";
+import { animated, useSpring } from "@react-spring/web";
+import axios from 'axios';
+
 import { Header } from "../../components/Header";
 import { Layout } from "../../components/Layout";
-import axios from 'axios';
-import { useState } from "react";
 import { UserTime } from "../../types";
 import { DateTime } from "../../components/DateTime";
 import { Loader } from "../../components/Loader";
+import { HomeContent } from "./styles";
 
 export function Home() {
     const [userTime, setUserTime] = useState<UserTime>({})
@@ -18,12 +21,12 @@ export function Home() {
     return (
         <Layout>
             <Header />
-            <div className="col-sm-12">
+            <HomeContent>
                 {!isFetchingTime ?
                     <DateTime time={userTime} />
                     : <Loader marginLeft="30rem" />
                 }
-            </div>
+            </HomeContent>
         </Layout>
     )
 }
