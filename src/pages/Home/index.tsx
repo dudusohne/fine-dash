@@ -4,11 +4,12 @@ import { animated, useSpring } from "@react-spring/web";
 import axios from 'axios';
 
 import { Header } from "../../components/Header";
-import { Layout } from "../../components/Layout";
+import { FlexRow, Layout } from "../../components/Layout";
 import { UserTime } from "../../types";
 import { DateTime } from "../../components/DateTime";
 import { Loader } from "../../components/Loader";
-import { HomeContent } from "./styles";
+import { HomeContent, NameText } from "./styles";
+import { TrailText } from "../../components/TrailText";
 
 export function Home() {
     const [userTime, setUserTime] = useState<UserTime>({})
@@ -22,10 +23,18 @@ export function Home() {
         <Layout>
             <Header />
             <HomeContent>
-                {!isFetchingTime ?
-                    <DateTime time={userTime} />
-                    : <Loader marginLeft="30rem" />
-                }
+                <FlexRow>
+                    {!isFetchingTime ?
+                        <DateTime time={userTime} />
+                        : <Loader marginLeft="30rem" />
+                    }
+             
+                    {/* <TrailText open={true}>
+                        <NameText>Eduardo</NameText>
+                        <NameText>Sohne</NameText>
+                        <NameText>Developer</NameText>
+                    </TrailText> */}
+                </FlexRow>
             </HomeContent>
         </Layout>
     )

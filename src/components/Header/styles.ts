@@ -30,10 +30,11 @@ export const UserImage = styled(animated.img)`
 `;
 
 export const UserName = styled.span`
-  font-size: ${(props) => props.theme.size.md};
+  font-size: 20px;
   font-family: ${(props) => props.theme.fontFamily};
   font-weight: 700;
   color: ${(props) => props.theme.color.primary};
+  margin-right: 10px;
 `;
 
 export const Background = styled.div`
@@ -47,7 +48,7 @@ export const PathnameTitle = styled.span`
   color: ${(props) => props.theme.color.secondary};
 `
 
-export const PathnameContainer = styled.div`
+export const PathnameContainer = styled(animated.div)`
   display: flex;
   flex-direction: row;
   border-top-left-radius: 16px;

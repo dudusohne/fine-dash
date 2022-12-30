@@ -1,6 +1,7 @@
+import { animated } from "@react-spring/web";
 import styled from "styled-components";
 
-export const LanguageChip = styled.div`
+export const LanguageChip = styled(animated.div)`
   display: flex;
   width: fit-content;
   padding: 5px;
