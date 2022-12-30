@@ -9,8 +9,6 @@ interface MenuProps {
     springs?: any
 }
 
-
-
 export function MenuButton({ label, active, pathname }: MenuProps) {
     const navigate = useNavigate()
 
