@@ -5,7 +5,8 @@ import axios from 'axios'
 import { Repository } from '../../types'
 import { Header } from '../../components/Header'
 import { ReposBox } from '../../components/ReposBox'
-import { HomeReposContainer, ReposWrapper, Spinner } from './styles'
+import { ReposWrapper } from './styles'
+import { Layout, Spinner } from '../../components/Layout'
 
 export function Repositories() {
     const { data, isFetching } = useQuery<Repository[]>('repos', async () => {
@@ -18,7 +19,7 @@ export function Repositories() {
     const navigate = useNavigate()
 
     return (
-        <HomeReposContainer>
+        <Layout>
             <Header />
             <ReposWrapper>
                 {isFetching ? <Spinner /> :
@@ -40,6 +41,6 @@ export function Repositories() {
                     </>
                 }
             </ReposWrapper>
-        </HomeReposContainer>
+        </Layout>
     )
 }

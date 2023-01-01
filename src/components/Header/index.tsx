@@ -1,12 +1,12 @@
 import axios from 'axios'
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useQuery } from 'react-query'
 
 import { Myself } from '../../types'
 import { MenuButton } from '../MenuButton'
 import { HeaderWrapper, PathnameContainer, PathnameTitle, UserImage, UserName } from './styles'
 import { FlexCol, FlexRow } from '../Layout';
-import { animated, useSpring } from '@react-spring/web';
+import { useSpring } from '@react-spring/web';
 import { LanguageChip } from '../ReposBox/components/LanguageChip/styles';
 import { Loader } from '../Loader';
 
@@ -17,6 +17,18 @@ export function Header() {
     }, {
         staleTime: 4000 * 60 // 4 minutes
     })
+
+    const location = useLocation();
+
+    function handlePathName(path: string) {
+        if (path === '/repositories') {
+            return 'GITHUB REPOSITORIES'
+        }
+
+        if (path === '/') {
+            return 'HOME'
+        }
+    }
 
     const slideAnimation = useSpring({
         from: { x: 0 },
@@ -32,18 +44,6 @@ export function Header() {
         from: { y: -100 },
         to: { y: 0 },
     })
-
-    const location = useLocation();
-
-    function handlePathName(path: string) {
-        if (path === '/repositories') {
-            return 'GITHUB REPOSITORIES'
-        }
-
-        if (path === '/') {
-            return 'HOME'
-        }
-    }
 
     return (
         <HeaderWrapper>

@@ -18,7 +18,7 @@ export function MenuButton({ label, active, pathname }: MenuProps) {
       })
 
     return (
-        <animated.div style={{ display: 'flex', flexDirection: 'column', ...springs }} onClick={() => navigate(`${pathname}`)}>
+        <animated.div style={{ display: 'flex', flexDirection: 'column', ...springs, zIndex: 20 }} onClick={() => navigate(`${pathname}`)}>
             <MenuButtonContainer isActive={active ?? false}>
                 {label === "github" &&
                     <GithubIcon isActive={active ?? false} />

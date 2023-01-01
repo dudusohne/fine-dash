@@ -8,7 +8,6 @@ export function AppRoutes() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Intro />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/repositories" element={<Repositories />} />
         <Route path="*" element={<NotFound404 />} />
