@@ -1,7 +1,8 @@
 import { useSpring } from "@react-spring/web";
 import { UserTime } from "../../types";
 import { Divider, FlexCol, FlexRow } from "../Layout";
-import { PrimaryText, SecundaryText, TimeContainer } from "./styles";
+import { TimeContainer } from "./styles";
+import { PrimaryText, SecundaryText } from "../Layout/text";
 
 interface UserDateTime {
     time: UserTime

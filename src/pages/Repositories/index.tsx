@@ -24,7 +24,7 @@ export function Repositories() {
             <ReposWrapper>
                 {isFetching ? <Spinner /> :
                     <>
-                        {data?.map(repo => {
+                        {data?.map((repo: Repository) => {
                             return (
                                 <ReposBox
                                     key={repo.id}
