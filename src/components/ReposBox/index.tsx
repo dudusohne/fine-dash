@@ -4,7 +4,7 @@ import { LinkChip, LinkText } from "./components/LinkChip/styles";
 import { Repository } from "../../types"
 
 interface BoxProps extends Repository {
-    onClickBox: () => void;
+    onClickBox?: () => void;
 }
 
 export function ReposBox({ name, description, homepage, language, onClickBox, id, created_at }: BoxProps) {
