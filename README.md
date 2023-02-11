@@ -1,10 +1,8 @@
-# in-progress
+#  *- in-progress -*
 
 --------------
 
-# dashboard with react and styled components
-
-#### using my repos from github
+# my personal portfolio
 
 ## how to install dependencies:
 `yarn`
