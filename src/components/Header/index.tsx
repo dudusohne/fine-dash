@@ -28,6 +28,10 @@ export function Header() {
         if (path === '/') {
             return 'HOME'
         }
+
+        if (path === '/about') {
+            return 'ABOUT ME'
+        }
     }
 
     const slideAnimation = useSpring({
@@ -50,6 +54,7 @@ export function Header() {
             <FlexRow style={{ columnGap: '8px', alignItems: 'center' }}>
                 <MenuButton label="github" pathname="/repositories" active={location.pathname === '/repositories'} springs={slideAnimation} />
                 <MenuButton label="home" pathname="/" active={location.pathname === '/'} springs={slideAnimation} />
+                <MenuButton label="about" pathname="/about" active={location.pathname === '/about'} springs={slideAnimation} />
             </FlexRow>
             <PathnameContainer style={{ ...slideAnimationFromFullLeft }}>
                 <PathnameTitle>{handlePathName(location.pathname)}</PathnameTitle>

@@ -5,12 +5,12 @@ import { TimeContainer } from "./styles";
 import { PrimaryText, SecundaryText } from "../Layout/text";
 
 interface UserDateTime {
-    time: UserTime
+    time?: UserTime
 }
 
 export function DateTime({ time }: UserDateTime) {
 
-    const date = new Date(time.datetime ?? '')
+    const date = new Date(time?.datetime ?? '')
 
     const springs = useSpring({
         from: { x: 0 },
@@ -22,7 +22,7 @@ export function DateTime({ time }: UserDateTime) {
             <FlexRow style={{ justifyContent: 'space-between' }}>
                 <FlexCol>
                     <SecundaryText>In:</SecundaryText>
-                    <PrimaryText>{time.timezone}</PrimaryText>
+                    <PrimaryText>{time?.timezone}</PrimaryText>
                 </FlexCol>
                 <FlexCol>
                     <SecundaryText>Time:</SecundaryText>
@@ -33,11 +33,11 @@ export function DateTime({ time }: UserDateTime) {
             <FlexRow style={{ justifyContent: 'space-between' }}>
                 <FlexCol>
                     <SecundaryText>Week day:</SecundaryText>
-                    <PrimaryText>{time.day_of_week}</PrimaryText>
+                    <PrimaryText>{time?.day_of_week}</PrimaryText>
                 </FlexCol>
                 <FlexCol>
                     <SecundaryText>Day of year:</SecundaryText>
-                    <PrimaryText>{time.day_of_year}</PrimaryText>
+                    <PrimaryText>{time?.day_of_year}</PrimaryText>
                 </FlexCol>
             </FlexRow>
 

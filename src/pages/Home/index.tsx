@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useQuery } from "react-query";
 import axios from 'axios';
 
@@ -10,11 +9,12 @@ import { Loader } from "../../components/Loader";
 import { HomeContent } from "./styles";
 
 export function Home() {
-    const [userTime, setUserTime] = useState<UserTime>({})
-
-    const { isFetching: isFetchingTime } = useQuery('user-time', async () => {
+    const { data: userTime, isFetching: isFetchingTime } = useQuery<UserTime>('user-time', async () => {
         const res = await axios.get('http://worldtimeapi.org/api/ip')
-        setUserTime(res.data)
+        return res.data
+    }, {
+        staleTime: 1000,
+        refetchOnWindowFocus: true
     })
 
     return (

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Github } from '@styled-icons/bootstrap/Github'
 import { Home } from '@styled-icons/fluentui-system-filled/Home'
+import { PersonFill } from '@styled-icons/bootstrap/PersonFill'
+
 
 export const MenuButtonContainer = styled.button<{isActive: boolean}>`
     display: flex;
@@ -46,6 +48,16 @@ export const GithubIcon = styled(Github)<{isActive: boolean}>`
 `
 
 export const HomeIcon = styled(Home)<{isActive: boolean}>`
+    width: 30px;
+    color: ${props => props.theme.color.primary};
+
+    ${props => props.isActive && `
+        color: #59d3e1;
+        width: 40px;
+    `}
+`
+
+export const AboutIcon = styled(PersonFill)<{isActive: boolean}>`
     width: 30px;
     color: ${props => props.theme.color.primary};
 

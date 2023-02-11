@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { GithubIcon, HomeIcon, IconTitle, MenuButtonContainer } from "./styles";
+import { AboutIcon, GithubIcon, HomeIcon, IconTitle, MenuButtonContainer } from "./styles";
 import { animated, useSpring } from "@react-spring/web";
 
 interface MenuProps {
@@ -25,6 +25,9 @@ export function MenuButton({ label, active, pathname }: MenuProps) {
                 }
                 {label === "home" &&
                     <HomeIcon isActive={active ?? false} />
+                }
+                {label === "about" &&
+                    <AboutIcon isActive={active ?? false} />
                 }
             </MenuButtonContainer>
         </animated.div>
