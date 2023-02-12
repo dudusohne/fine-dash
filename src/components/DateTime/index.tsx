@@ -3,6 +3,7 @@ import { UserTime } from "../../types";
 import { Divider, FlexCol, FlexRow } from "../Layout";
 import { TimeContainer } from "./styles";
 import { PrimaryText, SecundaryText } from "../Layout/text";
+import { LanguageChip } from "../ReposBox/components/LanguageChip/styles";
 
 interface UserDateTime {
     time?: UserTime
@@ -19,13 +20,16 @@ export function DateTime({ time }: UserDateTime) {
 
     return (
         <TimeContainer style={{ ...springs }}>
+            <LanguageChip style={{ marginTop: '-1.5rem', backgroundColor: '#59d3e1' }}>
+                <PrimaryText style={{ fontSize: '12px' }}>YOUR PUBLIC INFORMATION</PrimaryText>
+            </LanguageChip>
             <FlexRow style={{ justifyContent: 'space-between' }}>
                 <FlexCol>
-                    <SecundaryText>In:</SecundaryText>
+                    <SecundaryText>Where:</SecundaryText>
                     <PrimaryText>{time?.timezone}</PrimaryText>
                 </FlexCol>
                 <FlexCol>
-                    <SecundaryText>Time:</SecundaryText>
+                    <SecundaryText>Time-Stamp:</SecundaryText>
                     <PrimaryText>{date.toLocaleTimeString()}</PrimaryText>
                 </FlexCol>
             </FlexRow>
@@ -36,7 +40,7 @@ export function DateTime({ time }: UserDateTime) {
                     <PrimaryText>{time?.day_of_week}</PrimaryText>
                 </FlexCol>
                 <FlexCol>
-                    <SecundaryText>Day of year:</SecundaryText>
+                    <SecundaryText>Day of the year:</SecundaryText>
                     <PrimaryText>{time?.day_of_year}</PrimaryText>
                 </FlexCol>
             </FlexRow>

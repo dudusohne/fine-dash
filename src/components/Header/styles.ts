@@ -35,6 +35,11 @@ export const UserName = styled.span`
   font-weight: 700;
   color: ${(props) => props.theme.color.primary};
   margin-right: 10px;
+
+  @media screen and (max-width: 420px) {
+        font-size: 12px;
+        margin-right: 10px;
+  }
 `;
 
 export const Background = styled.div`
