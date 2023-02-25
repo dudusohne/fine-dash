@@ -13,8 +13,8 @@ export function DateTime({ time }: UserDateTime) {
   const date = new Date(time?.datetime ?? '');
 
   const springs = useSpring({
-    from: { x: 0 },
-    to: { x: 100 },
+    from: { x: -40 },
+    to: { x: 0 },
   });
 
   return (

@@ -11,17 +11,23 @@ export const HeaderWrapper = styled.header`
   padding: 0 3rem 0 3rem;
   position: sticky;
   top: 0;
-  height: 5vh;
   background-color: ${(props) => props.theme.color.tertiary};
   border-bottom: 6px solid ${(props) => props.theme.color.primary};
   z-index: 12;
 
-  ${responsivity.xs`
-    padding: 0 1rem 0 1rem;
+  ${responsivity.us`
+    padding: 0 10px 0 10px;
+    height: 5.9vh;
   `}
 
   ${responsivity.ss`
-    padding: 0 2rem 0 2rem;
+    padding: 0 10px 0 10px;
+    height: 5.9vh;
+  `}
+
+  ${responsivity.xs`
+    padding: 0 10px 0 10px;
+    height: 5vh;
   `}
 `;
 
@@ -45,19 +51,19 @@ export const UserName = styled.span`
   margin-right: 10px;
 
   ${responsivity.us`
-    font-size: 8px;
+    font-size: 13px;
     font-weight: light;
     margin-top: 18px;
   `}
 
   ${responsivity.ss`
-    font-size: 10px;
+    font-size: 13px;
     font-weight: light;
     margin-top: 18px;
   `}
 
   ${responsivity.xs`
-    font-size: 12px;
+    font-size: 13px;
     font-weight: light;
     margin-top: 20px;
   `}
@@ -138,9 +144,10 @@ export const PathnameContainer = styled(animated.div)`
   padding-block: 1px;
   padding-inline: 12px;
   margin-top: 2.4rem;
+  width: fit-content;
 
   ${responsivity.us`
-    margin-top: 3.3rem;
+    display: none;
   `}
 
   ${responsivity.xs`

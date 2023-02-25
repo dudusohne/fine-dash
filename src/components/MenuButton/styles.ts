@@ -36,7 +36,7 @@ export const MenuButtonContainer = styled.button<{ isActive: boolean }>`
     `}
 
   ${responsivity.us`
-    height: 35px;
+    height: 40px;
   `}
 
   ${responsivity.ss`
@@ -65,11 +65,11 @@ export const GithubIcon = styled(Github)<{ isActive: boolean }>`
     `}
 
   ${responsivity.us`
-    width: 16px;
+    width: 25px;
   `}
 
   ${responsivity.ss`
-    width: 20px;
+    width: 25px;
   `}
 
   ${responsivity.xs`
@@ -87,11 +87,11 @@ export const HomeIcon = styled(Home)<{ isActive: boolean }>`
         width: 40px;
     `}
   ${responsivity.us`
-    width: 16px;
+    width: 25px;
   `}
 
   ${responsivity.ss`
-    width: 20px;
+    width: 25px;
   `}
 
   ${responsivity.xs`
@@ -109,11 +109,11 @@ export const AboutIcon = styled(PersonFill)<{ isActive: boolean }>`
         width: 40px;
     `}
   ${responsivity.us`
-    width: 16px;
+    width: 25px;
   `}
 
   ${responsivity.ss`
-    width: 20px;
+    width: 25px;
   `}
 
   ${responsivity.xs`

@@ -9,18 +9,41 @@ export const HomeContent = styled.div`
   padding: 30px 12px 12px 12px;
 
   ${responsivity.us`
-    padding: 15px 12px 12px 12px;
+    flex-direction: row;
+    justify-content: space-between;
   `}
 
   ${responsivity.ss`
-    padding: 20px 12px 12px 12px;
+    flex-direction: row;
   `}
 
   ${responsivity.xs`
-    padding: 20px 12px 12px 12px;
   `}
 
   ${responsivity.sm`
-    padding: 30px 12px 12px 12px;
+  `}
+`;
+
+export const HomeTitleText = styled.span`
+  font-weight: bold;
+  font-family: ${(props) => props.theme.fontFamily};
+  color: ${(props) => props.theme.color.primary};
+
+  ${responsivity.us`
+    font-size: 16px;
+    font-weight: light;
+  `}
+
+  ${responsivity.xs`
+    font-size: 16px;
+    font-weight: light;
+  `}
+
+  ${responsivity.sm`
+    font-size: 16px;
+  `}
+
+  ${responsivity.md`
+    font-size: 20px;
   `}
 `;
