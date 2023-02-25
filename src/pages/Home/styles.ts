@@ -1,15 +1,26 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { responsivity } from '../../Layout/responsivity';
 
 export const HomeContent = styled.div`
-    display: flex;
-    height: 100%;
-    width: 95%;
-    padding: 30px 12px 12px 12px;
-`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 95%;
+  padding: 30px 12px 12px 12px;
 
-export const NameText = styled.span`
-    font-size: 65px;
-    font-weight: light;
-    font-family: Roboto;
-    letter-spacing: 4px;
-`
+  ${responsivity.us`
+    padding: 15px 12px 12px 12px;
+  `}
+
+  ${responsivity.ss`
+    padding: 20px 12px 12px 12px;
+  `}
+
+  ${responsivity.xs`
+    padding: 20px 12px 12px 12px;
+  `}
+
+  ${responsivity.sm`
+    padding: 30px 12px 12px 12px;
+  `}
+`;

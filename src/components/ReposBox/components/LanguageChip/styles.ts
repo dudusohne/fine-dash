@@ -1,5 +1,5 @@
-import { animated } from "@react-spring/web";
-import styled from "styled-components";
+import { animated } from '@react-spring/web';
+import styled from 'styled-components';
 
 export const LanguageChip = styled(animated.div)`
   display: flex;

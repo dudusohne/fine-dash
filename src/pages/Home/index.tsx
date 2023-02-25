@@ -1,33 +1,34 @@
-import { useState } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from 'react-query';
 import axios from 'axios';
 
-import { Header } from "../../components/Header";
-import { FlexRow, Layout } from "../../components/Layout";
-import { UserTime } from "../../types";
-import { DateTime } from "../../components/DateTime";
-import { Loader } from "../../components/Loader";
-import { HomeContent } from "./styles";
+import { Header } from '../../components/Header';
+import { Container, } from '../../Layout';
+import { UserTime } from '../../types';
+import { DateTime } from '../../components/DateTime';
+import { Loader } from '../../components/Loader';
+import { HomeContent } from './styles';
+import { PrimaryText } from '../../Layout/text';
 
 export function Home() {
-    const [userTime, setUserTime] = useState<UserTime>({})
+  const { data: userTime, isFetching: isFetchingTime } = useQuery<UserTime>(
+    'user-time',
+    async () => {
+      const res = await axios.get('http://worldtimeapi.org/api/ip');
+      return res.data;
+    },
+    {
+      staleTime: 1000,
+      refetchOnWindowFocus: true,
+    }
+  );
 
-    const { isFetching: isFetchingTime } = useQuery('user-time', async () => {
-        const res = await axios.get('http://worldtimeapi.org/api/ip')
-        setUserTime(res.data)
-    })
-
-    return (
-        <Layout>
-            <Header />
-            <HomeContent>
-                <FlexRow>
-                    {!isFetchingTime ?
-                        <DateTime time={userTime} />
-                        : <Loader />
-                    }
-                </FlexRow>
-            </HomeContent>
-        </Layout>
-    )
+  return (
+    <Container>
+      <Header />
+      <HomeContent>
+          {!isFetchingTime ? <DateTime time={userTime} /> : <Loader />}
+          <PrimaryText>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quo perferendis recusandae. Commodi inventore asperiores blanditiis, alias nihil atque non libero. Nostrum porro, commodi eos corrupti quidem possimus sit reiciendis.</PrimaryText>
+      </HomeContent>
+    </Container>
+  );
 }

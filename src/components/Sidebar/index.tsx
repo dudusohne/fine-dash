@@ -1,7 +1,5 @@
-import { SidebarContainer } from "./styles"
+import { SidebarContainer } from './styles';
 
 export function Sidebar() {
-    return (
-        <SidebarContainer></SidebarContainer>
-    )
+  return <SidebarContainer></SidebarContainer>;
 }

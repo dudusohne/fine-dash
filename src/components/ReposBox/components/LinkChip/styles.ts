@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Box } from "../../styles";
+import styled from 'styled-components';
+import { Box } from '../../styles';
 
 export const LinkChip = styled.div`
   display: flex;
