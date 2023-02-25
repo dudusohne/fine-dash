@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { Github } from '@styled-icons/bootstrap/Github';
 import { Home } from '@styled-icons/fluentui-system-filled/Home';
 import { PersonFill } from '@styled-icons/bootstrap/PersonFill';
+import { responsivity } from '../../Layout/responsivity';
 
 export const MenuButtonContainer = styled.button<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 50px;
-  height: 50px;
   margin-top: 2.1rem;
   align-items: center;
   justify-content: center;
@@ -34,10 +34,25 @@ export const MenuButtonContainer = styled.button<{ isActive: boolean }>`
         -webkit-box-shadow: 1px 4px 20px 0px rgba(0,0,0,0.61);
         -moz-box-shadow: 1px 4px 20px 0px rgba(0,0,0,0.61);
     `}
+
+  ${responsivity.us`
+    height: 35px;
+  `}
+
+  ${responsivity.ss`
+    height: 40px;
+  `}
+
+  ${responsivity.xs`
+    height: 50px;
+  `}
+
+  ${responsivity.sm`
+    height: 50px;
+  `}
 `;
 
 export const GithubIcon = styled(Github)<{ isActive: boolean }>`
-  width: 30px;
   color: ${(props) => props.theme.color.primary};
   transition: all 0.2s ease;
 
@@ -48,10 +63,21 @@ export const GithubIcon = styled(Github)<{ isActive: boolean }>`
         width: 40px;
         ttransform: translateY(-2px);
     `}
+
+  ${responsivity.us`
+    width: 16px;
+  `}
+
+  ${responsivity.ss`
+    width: 20px;
+  `}
+
+  ${responsivity.xs`
+    width: 30px;
+  `}
 `;
 
 export const HomeIcon = styled(Home)<{ isActive: boolean }>`
-  width: 30px;
   color: ${(props) => props.theme.color.primary};
 
   ${(props) =>
@@ -60,10 +86,20 @@ export const HomeIcon = styled(Home)<{ isActive: boolean }>`
         color: #59d3e1;
         width: 40px;
     `}
+  ${responsivity.us`
+    width: 16px;
+  `}
+
+  ${responsivity.ss`
+    width: 20px;
+  `}
+
+  ${responsivity.xs`
+    width: 30px;
+  `}
 `;
 
 export const AboutIcon = styled(PersonFill)<{ isActive: boolean }>`
-  width: 30px;
   color: ${(props) => props.theme.color.primary};
 
   ${(props) =>
@@ -72,6 +108,17 @@ export const AboutIcon = styled(PersonFill)<{ isActive: boolean }>`
         color: #59d3e1;
         width: 40px;
     `}
+  ${responsivity.us`
+    width: 16px;
+  `}
+
+  ${responsivity.ss`
+    width: 20px;
+  `}
+
+  ${responsivity.xs`
+    width: 30px;
+  `}
 `;
 
 export const IconTitle = styled.span`

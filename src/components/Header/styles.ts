@@ -15,6 +15,14 @@ export const HeaderWrapper = styled.header`
   background-color: ${(props) => props.theme.color.tertiary};
   border-bottom: 6px solid ${(props) => props.theme.color.primary};
   z-index: 12;
+
+  ${responsivity.xs`
+    padding: 0 1rem 0 1rem;
+  `}
+
+  ${responsivity.ss`
+    padding: 0 2rem 0 2rem;
+  `}
 `;
 
 export const UserImage = styled(animated.img)`
@@ -39,11 +47,19 @@ export const UserName = styled.span`
   ${responsivity.us`
     font-size: 8px;
     font-weight: light;
+    margin-top: 18px;
+  `}
+
+  ${responsivity.ss`
+    font-size: 10px;
+    font-weight: light;
+    margin-top: 18px;
   `}
 
   ${responsivity.xs`
-    font-size: 14px;
+    font-size: 12px;
     font-weight: light;
+    margin-top: 20px;
   `}
 
   ${responsivity.sm`
@@ -52,6 +68,30 @@ export const UserName = styled.span`
 
   ${responsivity.md`
     font-size: 20px;
+  `}
+`;
+
+export const JobTitle = styled.span`
+  font-family: ${(props) => props.theme.fontFamily};
+  font-weight: 700;
+  color: white;
+
+  ${responsivity.us`
+    font-size: 8px;
+    font-weight: light;
+  `}
+
+  ${responsivity.xs`
+    font-size: 10px;
+    font-weight: light;
+  `}
+
+  ${responsivity.sm`
+    font-size: 12px;
+  `}
+
+  ${responsivity.md`
+    font-size: 14px;
   `}
 `;
 
@@ -65,9 +105,28 @@ export const PathnameTitle = styled.span`
   font-family: ${(props) => props.theme.fontFamily};
   color: ${(props) => props.theme.color.secondary};
 
-  @media screen and (max-width: 420px) {
+  ${responsivity.us`
     font-size: 10px;
-  }
+    font-weight: light;
+  `}
+
+  ${responsivity.ss`
+    font-size: 14px;
+    font-weight: light;
+  `}
+
+  ${responsivity.xs`
+    font-size: 16px;
+    font-weight: light;
+  `}
+
+  ${responsivity.sm`
+    font-size: 20px;
+  `}
+
+  ${responsivity.md`
+    font-size: 22px;
+  `}
 `;
 
 export const PathnameContainer = styled(animated.div)`
@@ -79,4 +138,12 @@ export const PathnameContainer = styled(animated.div)`
   padding-block: 1px;
   padding-inline: 12px;
   margin-top: 2.4rem;
+
+  ${responsivity.us`
+    margin-top: 3.3rem;
+  `}
+
+  ${responsivity.xs`
+    margin-top: 3rem;
+  `}
 `;

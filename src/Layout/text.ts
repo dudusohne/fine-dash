@@ -32,8 +32,14 @@ export const SecundaryText = styled.span`
   font-family: ${(props) => props.theme.fontFamily};
   color: ${(props) => props.theme.color.greyDark};
 
+  ${responsivity.us`
+    font-size: 8px;
+    font-weight: light;
+  `}
+
   ${responsivity.xs`
     font-size: 12px;
+    font-weight: light;
   `}
 
   ${responsivity.sm`
@@ -41,6 +47,6 @@ export const SecundaryText = styled.span`
   `}
 
   ${responsivity.md`
-    font-size: 16px;
+    font-size: 18px;
   `}
 `;

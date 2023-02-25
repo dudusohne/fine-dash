@@ -6,6 +6,7 @@ import { Myself } from '../../types';
 import { MenuButton } from '../MenuButton';
 import {
   HeaderWrapper,
+  JobTitle,
   PathnameContainer,
   PathnameTitle,
   UserImage,
@@ -99,11 +100,7 @@ export function Header() {
                 ...slideAnimationFromTop,
               }}
             >
-              <UserName
-                style={{ fontSize: '10px', marginRight: '0', color: 'white' }}
-              >
-                DEVELOPER
-              </UserName>
+              <JobTitle>DEVELOPER</JobTitle>
             </LanguageChip>
           </FlexCol>
           <UserImage src={user?.avatar_url} alt="avatar" />

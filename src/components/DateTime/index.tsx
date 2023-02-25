@@ -22,7 +22,7 @@ export function DateTime({ time }: UserDateTime) {
       <LanguageChip
         style={{ marginTop: '-1.5rem', backgroundColor: '#59d3e1' }}
       >
-        <PrimaryText style={{ fontSize: '12px' }}>
+        <PrimaryText>
           YOUR PUBLIC INFORMATION
         </PrimaryText>
       </LanguageChip>

@@ -7,6 +7,7 @@ import { UserTime } from '../../types';
 import { DateTime } from '../../components/DateTime';
 import { Loader } from '../../components/Loader';
 import { HomeContent } from './styles';
+import { PrimaryText } from '../../Layout/text';
 
 export function Home() {
   const { data: userTime, isFetching: isFetchingTime } = useQuery<UserTime>(
@@ -26,6 +27,7 @@ export function Home() {
       <Header />
       <HomeContent>
           {!isFetchingTime ? <DateTime time={userTime} /> : <Loader />}
+          <PrimaryText>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quo perferendis recusandae. Commodi inventore asperiores blanditiis, alias nihil atque non libero. Nostrum porro, commodi eos corrupti quidem possimus sit reiciendis.</PrimaryText>
       </HomeContent>
     </Container>
   );

@@ -1,5 +1,6 @@
 import { animated } from '@react-spring/web';
 import styled from 'styled-components';
+import { responsivity } from '../../Layout/responsivity';
 
 export const TimeContainer = styled(animated.div)`
   display: flex;
@@ -12,12 +13,24 @@ export const TimeContainer = styled(animated.div)`
   border: 2px solid ${(props) => props.theme.color.greyLight};
   padding: 6px;
 
-  margin-top: 1rem;
-
-  @media screen and (max-width: 420px) {
+  ${responsivity.us`
     width: 200px;
     height: 100px;
     padding: 0px;
     margin-top: 0;
-  }
+  `}
+
+  ${responsivity.ss`
+    width: 120px;
+    height: 100px;
+    padding: 0px;
+    margin-top: 0;
+  `}
+
+  ${responsivity.xs`
+    width: 200px;
+    height: 100px;
+    padding: 0px;
+    margin-top: 0;
+  `}
 `;
