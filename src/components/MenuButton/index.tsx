@@ -3,7 +3,6 @@ import {
   AboutIcon,
   GithubIcon,
   HomeIcon,
-  IconTitle,
   MenuButtonContainer,
 } from './styles';
 import { animated, useSpring } from '@react-spring/web';

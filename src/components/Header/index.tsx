@@ -43,7 +43,7 @@ export function Header() {
     }
 
     if (path === '/about') {
-      return 'ABOUT ME';
+      return 'ABOUT';
     }
   }
 
