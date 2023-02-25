@@ -18,7 +18,7 @@ export type Myself = {
   location?: string;
   followers?: number;
   following?: number;
-}
+};
 
 export type UserTime = {
   datetime?: string;
@@ -26,4 +26,4 @@ export type UserTime = {
   day_of_year?: number;
   timezone?: string;
   week_number?: number;
-}
+};

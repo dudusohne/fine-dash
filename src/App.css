@@ -5,7 +5,7 @@
 
 body {
   margin: 0 auto;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar {
@@ -13,12 +13,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #F1F0F5;
+  background-color: #f1f0f5;
   border-radius: 10px !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #087E8B !important;
+  background: #087e8b !important;
   border-radius: 10px !important;
 }
-

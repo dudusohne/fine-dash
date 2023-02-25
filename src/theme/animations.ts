@@ -1,5 +1,5 @@
-import { useSpring } from "@react-spring/web";
-import { keyframes } from "styled-components";
+import { useSpring } from '@react-spring/web';
+import { keyframes } from 'styled-components';
 
 export const float = keyframes`
   0% {

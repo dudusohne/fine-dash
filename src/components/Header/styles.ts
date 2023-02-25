@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import { float, slide } from "../../theme/animations";
-import { animated } from "@react-spring/web";
+import styled from 'styled-components';
+import { float, slide } from '../../theme/animations';
+import { animated } from '@react-spring/web';
+import { responsivity } from '../../Layout/responsivity';
 
 export const HeaderWrapper = styled.header`
   display: flex;
@@ -30,16 +31,28 @@ export const UserImage = styled(animated.img)`
 `;
 
 export const UserName = styled.span`
-  font-size: 20px;
   font-family: ${(props) => props.theme.fontFamily};
   font-weight: 700;
   color: ${(props) => props.theme.color.primary};
   margin-right: 10px;
 
-  @media screen and (max-width: 420px) {
-        font-size: 12px;
-        margin-right: 10px;
-  }
+  ${responsivity.us`
+    font-size: 8px;
+    font-weight: light;
+  `}
+
+  ${responsivity.xs`
+    font-size: 14px;
+    font-weight: light;
+  `}
+
+  ${responsivity.sm`
+    font-size: 16px;
+  `}
+
+  ${responsivity.md`
+    font-size: 20px;
+  `}
 `;
 
 export const Background = styled.div`
@@ -51,7 +64,11 @@ export const PathnameTitle = styled.span`
   font-size: ${(props) => props.theme.size.md};
   font-family: ${(props) => props.theme.fontFamily};
   color: ${(props) => props.theme.color.secondary};
-`
+
+  @media screen and (max-width: 420px) {
+    font-size: 10px;
+  }
+`;
 
 export const PathnameContainer = styled(animated.div)`
   display: flex;
@@ -62,4 +79,4 @@ export const PathnameContainer = styled(animated.div)`
   padding-block: 1px;
   padding-inline: 12px;
   margin-top: 2.4rem;
-`
+`;
