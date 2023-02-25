@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { css } from 'styled-components';
 
 const breakpoints: any = {
@@ -13,7 +14,6 @@ export const responsivity: any = Object.keys(breakpoints).reduce(
   (accumulator: any, label: any) => {
     accumulator[label] = (...args: any) => css`
       @media (min-width: ${breakpoints[label]}) {
-        //@ts-ignore
         ${css(...args)};
       }
     `;
