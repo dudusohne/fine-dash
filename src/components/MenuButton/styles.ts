@@ -27,7 +27,6 @@ export const MenuButtonContainer = styled.button<{ isActive: boolean }>`
     `
         background-color: #3C3C3C;
         border-color: #59d3e1;
-        max-width: 60px;
         height: 60px;
         opacity: 1;
         box-shadow: 1px 4px 20px 0px rgba(0,0,0,0.61);
@@ -36,19 +35,23 @@ export const MenuButtonContainer = styled.button<{ isActive: boolean }>`
     `}
 
   ${responsivity.us`
-    height: 40px;
+    height: 60px;
+    width: 55px;
   `}
 
   ${responsivity.ss`
-    height: 40px;
+    height: 60px;
+    width: 55px;
   `}
 
   ${responsivity.xs`
-    height: 50px;
+    height: 65px;
+    width: 65px;
   `}
 
   ${responsivity.sm`
-    height: 50px;
+    height: 65px;
+    width: 65px;
   `}
 `;
 
@@ -65,15 +68,15 @@ export const GithubIcon = styled(Github)<{ isActive: boolean }>`
     `}
 
   ${responsivity.us`
-    width: 25px;
+    width: 35px;
   `}
 
   ${responsivity.ss`
-    width: 25px;
+    width: 35px;
   `}
 
   ${responsivity.xs`
-    width: 30px;
+    width: 40px;
   `}
 `;
 
@@ -87,15 +90,15 @@ export const HomeIcon = styled(Home)<{ isActive: boolean }>`
         width: 40px;
     `}
   ${responsivity.us`
-    width: 25px;
+    width: 35px;
   `}
 
   ${responsivity.ss`
-    width: 25px;
+    width: 35px;
   `}
 
   ${responsivity.xs`
-    width: 30px;
+    width: 40px;
   `}
 `;
 
@@ -109,15 +112,15 @@ export const AboutIcon = styled(PersonFill)<{ isActive: boolean }>`
         width: 40px;
     `}
   ${responsivity.us`
-    width: 25px;
+    width: 35px;
   `}
 
   ${responsivity.ss`
-    width: 25px;
+    width: 35px;
   `}
 
   ${responsivity.xs`
-    width: 30px;
+    width: 40px;
   `}
 `;
 

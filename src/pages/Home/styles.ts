@@ -26,23 +26,43 @@ export const HomeContent = styled.div`
 export const HomeTitleText = styled.span`
   font-weight: bold;
   font-family: ${(props) => props.theme.fontFamily};
-  color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color.secondary};
 
   ${responsivity.us`
-    font-size: 16px;
-    font-weight: light;
+    font-size: 18px;
   `}
 
   ${responsivity.xs`
-    font-size: 16px;
-    font-weight: light;
+    font-size: 20px;
   `}
 
   ${responsivity.sm`
-    font-size: 16px;
+    font-size: 24px;
   `}
 
   ${responsivity.md`
-    font-size: 20px;
+    font-size: 30px;
+  `}
+`;
+
+export const HomeWelcomeText = styled.h1`
+  font-weight: bold;
+  font-family: ${(props) => props.theme.fontFamily};
+  color: ${(props) => props.theme.color.tertiary};
+
+  ${responsivity.us`
+    font-size: 26px;
+  `}
+
+  ${responsivity.xs`
+    font-size: 24px;
+  `}
+
+  ${responsivity.sm`
+    font-size: 26px;
+  `}
+
+  ${responsivity.md`
+    font-size: 30px;
   `}
 `;

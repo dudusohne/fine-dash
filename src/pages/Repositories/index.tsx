@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { Header } from '../../components/Header';
 import { ReposBox } from '../../components/ReposBox';
-import { Layout, Spinner } from '../../Layout';
+import { Container, Spinner } from '../../Layout';
 import { Repository } from '../../types';
 import { ReposWrapper } from './styles';
 
@@ -22,7 +22,7 @@ export function Repositories() {
   );
 
   return (
-    <Layout>
+    <Container>
       <Header />
       <ReposWrapper>
         {isFetching ? (
@@ -45,6 +45,6 @@ export function Repositories() {
           </>
         )}
       </ReposWrapper>
-    </Layout>
+    </Container>
   );
 }

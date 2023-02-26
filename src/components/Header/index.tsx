@@ -38,10 +38,6 @@ export function Header() {
       return 'GITHUB REPOSITORIES';
     }
 
-    if (path === '/') {
-      return false;
-    }
-
     if (path === '/about') {
       return 'ABOUT ME';
     }
@@ -66,15 +62,15 @@ export function Header() {
     <HeaderWrapper>
       <FlexRow style={{ columnGap: '8px', alignItems: 'center' }}>
         <MenuButton
-          label="github"
-          pathname="/repositories"
-          active={location.pathname === '/repositories'}
-          springs={slideAnimation}
-        />
-        <MenuButton
           label="home"
           pathname="/"
           active={location.pathname === '/'}
+          springs={slideAnimation}
+        />
+        <MenuButton
+          label="github"
+          pathname="/repositories"
+          active={location.pathname === '/repositories'}
           springs={slideAnimation}
         />
         <MenuButton
@@ -84,30 +80,36 @@ export function Header() {
           springs={slideAnimation}
         />
       </FlexRow>
-      <PathnameContainer style={{ ...slideAnimationFromFullLeft }}>
-        <PathnameTitle>{handlePathName(location.pathname)}</PathnameTitle>
-      </PathnameContainer>
-      {!isFetchingUser ? (
-        <FlexRow
-          style={{ alignItems: 'center', marginTop: '1rem' }}
-        >
-          <FlexCol style={{ alignItems: 'center' }}>
-            <UserName>{user?.name}</UserName>
-            <LanguageChip
-              style={{
-                marginTop: '0',
-                justifyContent: 'center',
-                ...slideAnimationFromTop,
-              }}
+      {location.pathname !== '/' &&
+        <PathnameContainer style={{ ...slideAnimationFromFullLeft }}>
+          <PathnameTitle>{handlePathName(location.pathname)}</PathnameTitle>
+        </PathnameContainer>
+      }
+      {location.pathname === '/' &&
+        <>
+          {!isFetchingUser ? (
+            <FlexRow
+              style={{ alignItems: 'center', marginTop: '1rem' }}
             >
-              <JobTitle>DEVELOPER</JobTitle>
-            </LanguageChip>
-          </FlexCol>
-          <UserImage src={user?.avatar_url} alt="avatar" />
-        </FlexRow>
-      ) : (
-        <Loader width="40px" height="40px" />
-      )}
+              <FlexCol style={{ alignItems: 'center' }}>
+                <UserName>{user?.name}</UserName>
+                <LanguageChip
+                  style={{
+                    marginTop: '0',
+                    justifyContent: 'center',
+                    ...slideAnimationFromTop,
+                  }}
+                >
+                  <JobTitle>DEVELOPER</JobTitle>
+                </LanguageChip>
+              </FlexCol>
+              <UserImage src={user?.avatar_url} alt="avatar" />
+            </FlexRow>
+          ) : (
+            <Loader width="40px" height="40px" />
+          )}
+        </>
+      }
     </HeaderWrapper>
   );
 }

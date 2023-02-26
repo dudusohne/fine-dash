@@ -6,10 +6,11 @@ import { Container, FlexCol, } from '../../Layout';
 import { UserTime } from '../../types';
 import { DateTime } from '../../components/DateTime';
 import { Loader } from '../../components/Loader';
-import { HomeContent, HomeTitleText } from './styles';
+import { HomeContent, HomeTitleText, HomeWelcomeText } from './styles';
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { useRef } from 'react';
-import { FirstCard } from './FirstCard';
+import { FirstCard, SecondCard, ThirdCard } from './Cards';
+import { SecundaryText } from '../../Layout/text';
 
 export function Home() {
   const parallax = useRef<IParallax>(null!)
@@ -33,7 +34,7 @@ export function Home() {
           />
 
           <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
-            <img src="/light-bulb.png" style={{ width: '8%', marginLeft: '70%' }} />
+            <img src="/fire.png" style={{ width: '8%', marginLeft: '70%' }} />
           </ParallaxLayer>
 
           <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
@@ -86,6 +87,15 @@ export function Home() {
             <>
               <FirstCard>
                 <img src={'/programming.png'} />
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  paddingLeft: '12px',
+                  marginTop: '-28px'
+                }}>
+                  <HomeWelcomeText>Welcome!</HomeWelcomeText>
+                  <HomeTitleText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae recusandae delectus dolores voluptates temporibus iste rem est quo eius, molestias placeat animi aspernatur quibusdam nam maxime nemo? Suscipit, vel quidem?</HomeTitleText>
+                </div>
               </FirstCard>
             </>
           </ParallaxLayer>
@@ -99,7 +109,10 @@ export function Home() {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <img src={'/fire.png'} style={{ width: '10%' }} />
+            <SecondCard>
+
+              <img src={'/light-bulb.png'} />
+            </SecondCard>
           </ParallaxLayer>
 
           <ParallaxLayer
@@ -111,7 +124,10 @@ export function Home() {
               justifyContent: 'center',
             }}
             onClick={() => parallax.current.scrollTo(0)}>
-            <img src={'/binary-code.png'} style={{ width: '8%' }} />
+            <ThirdCard>
+
+              <img src={'/binary-code.png'} />
+            </ThirdCard>
           </ParallaxLayer>
 
           <ParallaxLayer

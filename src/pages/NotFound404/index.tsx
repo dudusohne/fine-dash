@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components/Button';
-import { FlexCol, Layout } from '../../Layout';
+import { FlexCol, Container } from '../../Layout';
 import { PrimaryText, SecundaryText } from '../../Layout/text';
 import { HomeContent } from '../Home/styles';
 
@@ -8,7 +8,7 @@ export function NotFound404() {
   const navigate = useNavigate();
 
   return (
-    <Layout>
+    <Container>
       <HomeContent>
         <FlexCol
           style={{
@@ -32,6 +32,6 @@ export function NotFound404() {
           />
         </FlexCol>
       </HomeContent>
-    </Layout>
+    </Container>
   );
 }

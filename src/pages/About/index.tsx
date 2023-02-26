@@ -1,10 +1,9 @@
 import { Header } from '../../components/Header';
-import { Layout } from '../../Layout';
-import { HomeContent } from '../Home/styles';
+import { AboutBox, AboutContainer } from './styles';
 
 export function About() {
   return (
-    <Layout>
+    <AboutContainer>
       <Header />
       <div className="area" >
         <ul className="circles">
@@ -19,8 +18,10 @@ export function About() {
           <li></li>
           <li></li>
         </ul>
-      <HomeContent>about page</HomeContent>
+      <AboutBox>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus similique excepturi in deserunt ad. Facere doloribus officiis incidunt ad, temporibus nobis provident voluptatem! Eligendi non iure molestias repellendus, sint in.</p>
+      </AboutBox>
       </div >
-    </Layout>
+    </AboutContainer>
   );
 }

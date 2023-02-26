@@ -33,8 +33,8 @@ export function MenuButton({ label, active, pathname }: MenuProps) {
       onClick={() => navigate(`${pathname}`)}
     >
       <MenuButtonContainer isActive={active ?? false}>
-        {label === 'github' && <GithubIcon isActive={active ?? false} />}
         {label === 'home' && <HomeIcon isActive={active ?? false} />}
+        {label === 'github' && <GithubIcon isActive={active ?? false} />}
         {label === 'about' && <AboutIcon isActive={active ?? false} />}
       </MenuButtonContainer>
     </animated.div>
