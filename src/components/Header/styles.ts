@@ -8,7 +8,6 @@ export const HeaderWrapper = styled.header`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 3rem 0 3rem;
   position: sticky;
   top: 0;
   background-color: ${(props) => props.theme.color.tertiary};
@@ -21,12 +20,22 @@ export const HeaderWrapper = styled.header`
   `}
 
   ${responsivity.ss`
-    padding: 0 10px 0 10px;
+    padding: 0 12px 0 12px;
     height: 5.9vh;
   `}
 
   ${responsivity.xs`
-    padding: 0 10px 0 10px;
+    padding: 0 1rem 0 1rem;
+    height: 5vh;
+  `}
+
+  ${responsivity.sm`
+    padding: 0 3rem 0 3rem;
+    height: 5vh;
+  `}
+
+  ${responsivity.md`
+    padding: 0 3.9rem 0 3.9rem;
     height: 5vh;
   `}
 `;
@@ -150,7 +159,8 @@ export const PathnameContainer = styled(animated.div)`
     display: none;
   `}
 
-  ${responsivity.xs`
+  ${responsivity.ss`
+    display: flex;
     margin-top: 3rem;
   `}
 `;

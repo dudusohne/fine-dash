@@ -4,10 +4,122 @@ import { rotate } from '../theme/animations';
 export const Layout = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #f5f5f5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23087e8b' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%230bb3c6' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23087985' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%230aa9bb' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23077480' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%230a9fb0' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23076f7a' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%230995a5' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23066a74' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%23098c9b' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%2306656f' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23088290' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
+
+  .area {
+    background: #3c3c3c;
+    background: -webkit-linear-gradient(to left, #59d3e1, #087e8b);
+    width: 100%;
+    height: 96.2vh;
+  }
+
+  .circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+  }
+
+  .circles li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+  }
+
+  .circles li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+  }
+
+  .circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+  }
+
+  .circles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+  }
+
+  .circles li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+  }
+
+  .circles li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+  }
+
+  .circles li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+  }
+
+  .circles li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+  }
+
+  .circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+  }
+
+  .circles li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+  }
+
+  @keyframes animate {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+    }
+
+    100% {
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+    }
+  }
 `;
 
 export const Container = styled.div`

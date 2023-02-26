@@ -39,11 +39,11 @@ export function Header() {
     }
 
     if (path === '/') {
-      return 'HOME';
+      return false;
     }
 
     if (path === '/about') {
-      return 'ABOUT';
+      return 'ABOUT ME';
     }
   }
 
