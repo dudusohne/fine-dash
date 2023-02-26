@@ -121,7 +121,7 @@ export const PathnameTitle = styled.span`
   color: ${(props) => props.theme.color.secondary};
 
   ${responsivity.us`
-    font-size: 10px;
+    font-size: 14px;
     font-weight: light;
   `}
 
@@ -156,7 +156,8 @@ export const PathnameContainer = styled(animated.div)`
   width: fit-content;
 
   ${responsivity.us`
-    display: none;
+    display: flex;
+    margin-top: 2.7rem;
   `}
 
   ${responsivity.ss`
