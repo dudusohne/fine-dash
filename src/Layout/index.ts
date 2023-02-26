@@ -11,7 +11,9 @@ export const Layout = styled.div`
 `;
 
 export const Container = styled.div`
-  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 `;
 
 export const FlexRow = styled.div`
