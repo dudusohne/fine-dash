@@ -29,15 +29,19 @@ export const HomeTitleText = styled.span`
   color: ${(props) => props.theme.color.secondary};
 
   ${responsivity.us`
-    font-size: 16.5px;
+    font-size: 17px;
   `}
 
-  ${responsivity.xs`
+  ${responsivity.ss`
     font-size: 18px;
   `}
 
+  ${responsivity.xs`
+    font-size: 22px;
+  `}
+
   ${responsivity.sm`
-    font-size: 24px;
+    font-size: 29.5px;
   `}
 
   ${responsivity.md`

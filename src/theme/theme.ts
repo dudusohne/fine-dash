@@ -12,6 +12,7 @@ export const theme = {
     black: '#000000',
     white: '#ffffff',
     yellow: '#ffc55a',
+    green: '#42B983',
 
     tertiaryActive: '#ff262d',
     tertiaryInactive: '#ef9396',
