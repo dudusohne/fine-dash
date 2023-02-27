@@ -6,6 +6,7 @@ export const FirstCard = styled.div`
   align-items: ;
   height: 300px;
   width: 78%;
+  max-width: 800px;
 
   border-radius: 0px 70px 0px 70px;
   background: #3c3c3c;
@@ -25,9 +26,10 @@ export const SecondCard = styled.div`
   display: flex;
   height: 300px;
   width: 78%;
+  max-width: 800px;
 
   border-radius: 0px 70px 0px 70px;
-  background: #FF5A5F;
+  background: #3c3c3c;
   box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
@@ -46,9 +48,10 @@ export const ThirdCard = styled.div`
   display: flex;
   height: 300px;
   width: 78%;
+  max-width: 800px;
 
   border-radius: 0px 70px 0px 70px;
-  background: #59d3e1;
+  background: #f5f5f5;
   box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
@@ -56,6 +59,7 @@ export const ThirdCard = styled.div`
   z-index: 0;
 
   img {
+    margin: -20px 0px 0px -20px;
     height: 120px;
     width: 120px;
   }

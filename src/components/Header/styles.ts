@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
   top: 0;
   background-color: ${(props) => props.theme.color.tertiary};
   border-bottom: 6px solid ${(props) => props.theme.color.primary};
-  z-index: 12;
+  z-index: 30;
 
   ${responsivity.us`
     padding: 0 10px 0 10px;

@@ -1,15 +1,98 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { responsivity } from '../../Layout/responsivity';
+import { animated } from '@react-spring/web';
+import { float } from '../../theme/animations';
+
+export const AboutProfileText = styled.span`
+  font-weight: bold;
+  font-family: ${(props) => props.theme.fontFamily};
+  color: ${(props) => props.theme.color.greyDark};
+
+  ${responsivity.us`
+    font-size: 12px;
+    font-weight: light;
+  `}
+
+  ${responsivity.xs`
+    font-size: 16px;
+    font-weight: light;
+  `}
+
+  ${responsivity.sm`
+    font-size: 22px;
+  `}
+
+  ${responsivity.md`
+    font-size: 24px;
+  `}
+`;
+
+export const AboutProfileTextTwo = styled.span`
+  font-weight: bold;
+  font-family: ${(props) => props.theme.fontFamily};
+  color: ${(props) => props.theme.color.greyDark};
+
+  ${responsivity.us`
+    font-size: 14px;
+    font-weight: light;
+  `}
+
+  ${responsivity.xs`
+    font-size: 18px;
+    font-weight: light;
+  `}
+
+  ${responsivity.sm`
+    font-size: 22px;
+  `}
+
+  ${responsivity.md`
+    font-size: 24px;
+  `}
+`;
+
+export const AboutProfileTitle = styled.span`
+  font-weight: bold;
+  font-family: ${(props) => props.theme.fontFamily};
+  color: ${(props) => props.theme.color.greyDark};
+
+  ${responsivity.us`
+    font-size: 25px;
+  `}
+
+  ${responsivity.ss`
+    font-size: 29px;
+  `}
+
+  ${responsivity.xs`
+    font-size: 34px;
+    font-weight: light;
+  `}
+
+  ${responsivity.sm`
+    font-size: 40px;
+  `}
+
+  ${responsivity.md`
+    font-size: 48px;
+  `}
+`;
 
 export const AboutBox = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  height: 300px;
+  height: fit-content;
 
   border-radius: 50px;
   background: linear-gradient(145deg, #363636, #404040);
-  box-shadow: 20px 20px 60px #333333, -20px -20px 60px #454545;
+  box-shadow: 10px 10px 50px #181818;
+  margin: 0px 50px 0 50px;
+  padding: 20px;
+
+  z-index: 20;
 
   ${responsivity.us`
     width: 100%;
@@ -31,6 +114,18 @@ export const AboutBox = styled.div`
   ${responsivity.md`
     width: 600px;
   `}
+`;
+
+export const UserImage = styled(animated.img)`
+  width: 180px;
+  border-radius: 50%;
+  border: 2px solid ${(props) => props.theme.color.primary};
+  transform: translatey(0px);
+  animation: ${float} 6s ease-in-out infinite;
+  z-index: 23;
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export const AboutContainer = styled.div`
