@@ -17,7 +17,8 @@ export const FirstCard = styled.div`
   img {
     height: 120px;
     width: 120px;
-    margin-right: -15px;
+    margin-right: -30px;
+    margin-bottom: -20px;
     align-self: flex-end;
   }
 `;

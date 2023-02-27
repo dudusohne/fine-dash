@@ -9,4 +9,5 @@ export const ReposWrapper = styled.div`
   justify-content: center;
   align-items: flex-start;
   overflow: scroll !important;
+  padding-top: 25px;
 `;

@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 
 import { Header } from '../../components/Header';
-import { Container, FlexCol, } from '../../Layout';
+import { Container, FlexCol, FlexRow, } from '../../Layout';
 import { UserTime } from '../../types';
 import { DateTime } from '../../components/DateTime';
 import { Loader } from '../../components/Loader';
@@ -86,19 +86,27 @@ export function Home() {
             }}>
             <>
               <FirstCard>
-                <img src={'/programming.png'} />
+                <img src={'/coding2.png'} />
                 <div style={{
                   display: 'flex',
                   flexDirection: 'column',
                   paddingLeft: '12px',
-                  marginTop: '-28px'
+                  marginTop: '-28px',
+                  width: '100%'
                 }}>
                   <HomeWelcomeText>Welcome!</HomeWelcomeText>
-                  <HomeTitleText>My name is <HomeTitleText style={{ color: '#FF5A5F' }}>Eduardo Sohne </HomeTitleText>
-                    and I'm a <HomeTitleText style={{ color: '#ffc55a' }}>javascript </HomeTitleText>fullstack developer. Most of my experience is at the front-end and already worked with a lot of features like  
-                    <HomeTitleText style={{ color: '#087E8B' }}> typescript</HomeTitleText>, vanilla js and also with 
-                    <HomeTitleText style={{ color: '#42B983' }}> vue </HomeTitleText>and 
-                    <HomeTitleText style={{ color: '#59d3e1' }}> react</HomeTitleText>.</HomeTitleText>
+                  <HomeTitleText>
+                    My name is
+                    <HomeTitleText style={{ color: '#FF5A5F' }}> Eduardo Sohne </HomeTitleText>
+                    and I'm a
+                    <HomeTitleText style={{ color: '#ffc55a' }}> javascript </HomeTitleText>
+                    fullstack developer.
+                    Most of my experience is at the front-end
+                    and already worked with a lot of cool things like
+                    <HomeTitleText style={{ color: '#087E8B' }}> typescript</HomeTitleText>, vanilla js and also with
+                    <HomeTitleText style={{ color: '#42B983' }}> vue </HomeTitleText>and
+                    <HomeTitleText style={{ color: '#59d3e1' }}> react</HomeTitleText>.
+                  </HomeTitleText>
                 </div>
               </FirstCard>
             </>
@@ -155,6 +163,6 @@ export function Home() {
       <FlexCol style={{ paddingInline: '8px' }}>
         <HomeTitleText>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quo perferendis recusandae. Commodi inventore asperiores blanditiis, alias nihil atque non libero. Nostrum porro, commodi eos corrupti quidem possimus sit reiciendis.</HomeTitleText>
       </FlexCol> */}
-    </Container>
+    </Container >
   );
 }
