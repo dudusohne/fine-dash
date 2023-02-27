@@ -94,7 +94,11 @@ export function Home() {
                   marginTop: '-28px'
                 }}>
                   <HomeWelcomeText>Welcome!</HomeWelcomeText>
-                  <HomeTitleText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae recusandae delectus dolores voluptates temporibus iste rem est quo eius, molestias placeat animi aspernatur quibusdam nam maxime nemo? Suscipit, vel quidem?</HomeTitleText>
+                  <HomeTitleText>My name is <HomeTitleText style={{ color: '#FF5A5F' }}>Eduardo Sohne </HomeTitleText>
+                    and I'm a <HomeTitleText style={{ color: '#ffc55a' }}>javascript </HomeTitleText>fullstack developer. Most of my experience is at the front-end and already worked with a lot of features like  
+                    <HomeTitleText style={{ color: '#087E8B' }}> typescript</HomeTitleText>, vanilla js and also with 
+                    <HomeTitleText style={{ color: '#42B983' }}> vue </HomeTitleText>and 
+                    <HomeTitleText style={{ color: '#59d3e1' }}> react</HomeTitleText>.</HomeTitleText>
                 </div>
               </FirstCard>
             </>

@@ -43,10 +43,7 @@ export function Header() {
     }
   }
 
-  const slideAnimation = useSpring({
-    from: { x: 0 },
-    to: { x: 100 },
-  });
+  const slideAnimation = useSpring({ from: { x: 0 }, to: { x: 100 } });
 
   const slideAnimationFromFullLeft = useSpring({
     from: { x: -1000 },
