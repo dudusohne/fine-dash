@@ -12,7 +12,7 @@
 
 `yarn build`
 
-## how to Run:
+## - how to Run:
 
 `yarn dev`
 
