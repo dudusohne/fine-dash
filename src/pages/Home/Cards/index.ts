@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FirstCard = styled.div`
   display: flex;
   flex-direction: row-reverse;
-  align-items: ;
+  align-items: center;
   height: 300px;
   width: 78%;
   max-width: 800px;
@@ -25,7 +25,7 @@ export const FirstCard = styled.div`
 
 export const SecondCard = styled.div`
   display: flex;
-  height: 300px;
+  height: fit-content;
   width: 78%;
   max-width: 800px;
 
@@ -43,11 +43,13 @@ export const SecondCard = styled.div`
     margin-left: -20px;
     margin-top: -20px;
   }
+
+  padding: 30px;
 `;
 
 export const ThirdCard = styled.div`
   display: flex;
-  height: 300px;
+  height: fit-content;
   width: 78%;
   max-width: 800px;
 
@@ -64,4 +66,6 @@ export const ThirdCard = styled.div`
     height: 120px;
     width: 120px;
   }
+
+  padding: 30px 10px 30px 10px;
 `;

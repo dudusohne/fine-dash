@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { responsivity } from '../../Layout/responsivity';
+import { GithubSquare } from '@styled-icons/fa-brands/GithubSquare';
 
 export const HomeContent = styled.div`
   display: flex;
@@ -68,5 +69,43 @@ export const HomeWelcomeText = styled.h1`
 
   ${responsivity.md`
     font-size: 30px;
+  `}
+`;
+
+export const HomeTitleBIG = styled.strong`
+  font-weight: bold;
+  font-family: ${(props) => props.theme.fontFamily};
+  color: ${(props) => props.theme.color.tertiary};
+
+  ${responsivity.us`
+    font-size: 26px;
+  `}
+
+  ${responsivity.xs`
+    font-size: 24px;
+  `}
+
+  ${responsivity.sm`
+    font-size: 26px;
+  `}
+
+  ${responsivity.md`
+    font-size: 38px;
+  `}
+`;
+
+export const GithubREPO = styled(GithubSquare)`
+  color: black;
+
+  ${responsivity.us`
+    width: 40px;
+  `}
+
+  ${responsivity.ss`
+    width: 40px;
+  `}
+
+  ${responsivity.xs`
+    width: 40px;
   `}
 `;

@@ -6,11 +6,11 @@ import { Container, FlexCol, FlexRow, } from '../../Layout';
 import { UserTime } from '../../types';
 import { DateTime } from '../../components/DateTime';
 import { Loader } from '../../components/Loader';
-import { HomeContent, HomeTitleText, HomeWelcomeText } from './styles';
+import { GithubREPO, HomeContent, HomeTitleBIG, HomeTitleText, HomeWelcomeText } from './styles';
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { useRef } from 'react';
 import { FirstCard, SecondCard, ThirdCard } from './Cards';
-import { SecundaryText } from '../../Layout/text';
+import { PrimaryText, SecundaryText } from '../../Layout/text';
 
 export function Home() {
   const parallax = useRef<IParallax>(null!)
@@ -32,10 +32,6 @@ export function Home() {
               backgroundSize: 'cover',
             }}
           />
-
-          <ParallaxLayer offset={1.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
-            <img src="/fire.png" style={{ width: '8%', marginLeft: '70%' }} />
-          </ParallaxLayer>
 
           <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
             <img src={'/cloud.svg'} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
@@ -122,8 +118,17 @@ export function Home() {
               justifyContent: 'center',
             }}>
             <SecondCard>
-
-              <img src={'/light-bulb.png'} />
+              <img src={'/light-bulb.png'} style={{ width: '100px', height: '100px' }} />
+              <HomeTitleText>
+                I made this app to try out
+                some cool features from the
+                <HomeTitleBIG style={{ color: '#59d3e1' }}> react </HomeTitleBIG>
+                ecosystem as<HomeTitleBIG style={{ color: '#42B983' }}> vite</HomeTitleBIG>,
+                fetching and caching data with
+                <HomeTitleBIG style={{ color: '#eb726a' }}> react query</HomeTitleBIG>,
+                animated things with <HomeTitleBIG style={{ color: '#59d3e1' }}> react spring</HomeTitleBIG>,
+                responsivity with <HomeTitleBIG style={{ color: '#eb6a9c' }}>styled-components</HomeTitleBIG> and more.
+              </HomeTitleText>
             </SecondCard>
           </ParallaxLayer>
 
@@ -137,8 +142,28 @@ export function Home() {
             }}
             onClick={() => parallax.current.scrollTo(0)}>
             <ThirdCard>
-
-              <img src={'/binary-code.png'} />
+              <img src={'/binary-code.png'} style={{ marginTop: '-4rem' }} />
+              <FlexCol>
+                <HomeTitleText style={{ color: 'black' }}>
+                  all things said, this app code is <HomeTitleBIG style={{ color: '#da680c' }}> public </HomeTitleBIG>
+                  and you can check it below. Besides that you can
+                  also send me feedback about this project or just reach me out.
+                </HomeTitleText>
+                <FlexRow style={{ alignItems: 'center', marginTop: '1rem' }}>
+                  <FlexRow style={{ columnGap: '8px', alignItems: 'center', borderRadius: '8px', border: '1px solid black', padding: '3px' }}>
+                    <GithubREPO />
+                    <PrimaryText>This repo</PrimaryText>
+                  </FlexRow>
+                  <FlexRow style={{ marginLeft: '4px', columnGap: '8px', alignItems: 'center', borderRadius: '8px', border: '1px solid black', padding: '3px' }}>
+                    <GithubREPO />
+                    <PrimaryText>This repo</PrimaryText>
+                  </FlexRow>
+                  <FlexRow style={{ marginLeft: '4px', columnGap: '8px', alignItems: 'center', borderRadius: '8px', border: '1px solid black', padding: '3px' }}>
+                    <GithubREPO />
+                    <PrimaryText>This repo</PrimaryText>
+                  </FlexRow>
+                </FlexRow>
+              </FlexCol>
             </ThirdCard>
           </ParallaxLayer>
 
@@ -155,14 +180,6 @@ export function Home() {
           </ParallaxLayer>
         </Parallax>
       </div>
-      {/* <HomeContent>
-        <div style={{ paddingInline: '8px' }}>
-          <HomeTitleText>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quo perferendis recusandae. Commodi inventore asperiores blanditiis, alias nihil atque non libero. Nostrum porro, commodi eos corrupti quidem possimus sit reiciendis.</HomeTitleText>
-        </div>
-      </HomeContent>
-      <FlexCol style={{ paddingInline: '8px' }}>
-        <HomeTitleText>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In quo perferendis recusandae. Commodi inventore asperiores blanditiis, alias nihil atque non libero. Nostrum porro, commodi eos corrupti quidem possimus sit reiciendis.</HomeTitleText>
-      </FlexCol> */}
     </Container >
   );
 }
