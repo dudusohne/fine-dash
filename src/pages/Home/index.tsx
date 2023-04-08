@@ -1,16 +1,15 @@
-import { useQuery } from 'react-query';
-import axios from 'axios';
+import { useRef } from 'react';
+import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 import { Header } from '../../components/Header';
-import { Container, FlexCol, FlexRow, } from '../../Layout';
-import { UserTime } from '../../types';
-import { DateTime } from '../../components/DateTime';
-import { Loader } from '../../components/Loader';
-import { GithubREPO, HomeContent, HomeTitleBIG, HomeTitleText, HomeWelcomeText } from './styles';
-import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
-import { useRef } from 'react';
+import { Container, Divider, DividerVertical, FlexCol, FlexRow, } from '../../Layout';
+import { GithubREPO, HomeTitleBIG, HomeTitleText, HomeWelcomeText, StyledTalk } from './styles';
 import { FirstCard, SecondCard, ThirdCard } from './Cards';
-import { PrimaryText, SecundaryText } from '../../Layout/text';
+import { PrimaryText } from '../../Layout/text';
+import Ribbon from '../../components/Svg/Ribbon';
+import { ReactLogo } from 'styled-icons/fa-brands';
+import { Javascript, Typescript, Vuejs } from 'styled-icons/boxicons-logos';
+import { Styledcomponents, Vite } from 'styled-icons/simple-icons';
 
 export function Home() {
   const parallax = useRef<IParallax>(null!)
@@ -59,8 +58,6 @@ export function Home() {
             <img src={'/cloud.svg'} style={{ display: 'block', width: '15%', marginLeft: '75%', color: 'red' }} />
           </ParallaxLayer>
 
-
-
           <ParallaxLayer
             offset={2}
             speed={-0.3}
@@ -82,7 +79,7 @@ export function Home() {
             }}>
             <>
               <FirstCard>
-                <img src={'/coding2.png'} />
+
                 <div style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -104,6 +101,13 @@ export function Home() {
                     <HomeTitleText style={{ color: '#59d3e1' }}> react</HomeTitleText>.
                   </HomeTitleText>
                 </div>
+                <Divider color="#ffc55a" style={{ marginTop: '1.2rem' }} />
+                <FlexRow style={{ width: '100%', columnGap: '16px', justifyContent: 'flex-end' }}>
+                  <Vuejs height="2rem" width="2rem" color="#ffc55a" />
+                  <ReactLogo height="2rem" width="2rem" color="#ffc55a" />
+                  <Typescript height="2rem" width="2rem" color="#ffc55a" />
+                  <Javascript height="2rem" width="2rem" color="#ffc55a" />
+                </FlexRow>
               </FirstCard>
             </>
           </ParallaxLayer>
@@ -118,7 +122,6 @@ export function Home() {
               justifyContent: 'center',
             }}>
             <SecondCard>
-              <img src={'/light-bulb.png'} style={{ width: '100px', height: '100px' }} />
               <HomeTitleText>
                 I made this app to try out
                 some cool features from the
@@ -129,6 +132,12 @@ export function Home() {
                 animated things with <HomeTitleBIG style={{ color: '#59d3e1' }}> react spring</HomeTitleBIG>,
                 responsivity with <HomeTitleBIG style={{ color: '#eb6a9c' }}>styled-components</HomeTitleBIG> and more.
               </HomeTitleText>
+              <Divider color="#42B983" />
+              <FlexRow style={{ width: '100%', columnGap: '16px', justifyContent: 'flex-end' }}>
+                <Vite height="2rem" width="2rem" color="#42B983" />
+                <ReactLogo height="2rem" width="2rem" color="#42B983" />
+                <Styledcomponents height="2rem" width="2rem" color="#42B983" />
+              </FlexRow>
             </SecondCard>
           </ParallaxLayer>
 
@@ -142,41 +151,16 @@ export function Home() {
             }}
             onClick={() => parallax.current.scrollTo(0)}>
             <ThirdCard>
-              <img src={'/binary-code.png'} style={{ marginTop: '-4rem' }} />
-              <FlexCol>
-                <HomeTitleText style={{ color: 'black' }}>
-                  all things said, this app code is <HomeTitleBIG style={{ color: '#da680c' }}> public </HomeTitleBIG>
-                  and you can check it below. Besides that you can
+              <HomeTitleText style={{ color: 'black' }}>
+                This app code is <HomeTitleBIG style={{ color: '#da680c' }}> public </HomeTitleBIG>
+                and you can go to it in the links below. <HomeTitleText style={{ color: '#c26e29' }}>
+                  Besides that you can
                   also send me feedback about this project or just reach me out.
                 </HomeTitleText>
-                <FlexRow style={{ alignItems: 'center', marginTop: '1rem' }}>
-                  <FlexRow style={{ columnGap: '8px', alignItems: 'center', borderRadius: '8px', border: '1px solid black', padding: '3px' }}>
-                    <GithubREPO />
-                    <PrimaryText>This repo</PrimaryText>
-                  </FlexRow>
-                  <FlexRow style={{ marginLeft: '4px', columnGap: '8px', alignItems: 'center', borderRadius: '8px', border: '1px solid black', padding: '3px' }}>
-                    <GithubREPO />
-                    <PrimaryText>This repo</PrimaryText>
-                  </FlexRow>
-                  <FlexRow style={{ marginLeft: '4px', columnGap: '8px', alignItems: 'center', borderRadius: '8px', border: '1px solid black', padding: '3px' }}>
-                    <GithubREPO />
-                    <PrimaryText>This repo</PrimaryText>
-                  </FlexRow>
-                </FlexRow>
-              </FlexCol>
-            </ThirdCard>
-          </ParallaxLayer>
+              </HomeTitleText>
+              {/* <Divider color="#087E8B" /> */}
 
-          <ParallaxLayer
-            offset={2.5}
-            speed={-0.4}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              pointerEvents: 'none',
-            }}>
-            <img src={'/shuttle.png'} style={{ width: '30%' }} />
+            </ThirdCard>
           </ParallaxLayer>
         </Parallax>
       </div>

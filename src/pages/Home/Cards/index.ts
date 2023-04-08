@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const FirstCard = styled.div`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: center;
-  height: 300px;
+  height: fit-content;
   width: 78%;
   max-width: 800px;
 
-  border-radius: 0px 70px 0px 70px;
+  border-radius: 40px;
   background: #3c3c3c;
   box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
@@ -21,13 +21,17 @@ export const FirstCard = styled.div`
     margin-bottom: -20px;
     align-self: flex-end;
   }
+
+  padding: 30px;
 `;
 
 export const SecondCard = styled.div`
   display: flex;
+  flex-direction: column;
   height: fit-content;
   width: 78%;
   max-width: 800px;
+  align-items: center;
 
   border-radius: 0px 70px 0px 70px;
   background: #3c3c3c;
@@ -49,11 +53,13 @@ export const SecondCard = styled.div`
 
 export const ThirdCard = styled.div`
   display: flex;
+  flex-direction: column;
   height: fit-content;
   width: 78%;
   max-width: 800px;
+  align-items: center;
 
-  border-radius: 0px 70px 0px 70px;
+  border-radius: 40px;
   background: #f5f5f5;
   box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
@@ -67,5 +73,5 @@ export const ThirdCard = styled.div`
     width: 120px;
   }
 
-  padding: 30px 10px 30px 10px;
+  padding: 30px;
 `;

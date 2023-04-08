@@ -1,12 +1,16 @@
+import { useState } from 'react'
 import axios from 'axios';
-import { Header } from '../../components/Header';
-import { AboutBox, AboutContainer, AboutProfileText, AboutProfileTextTwo, AboutProfileTitle, UserImage } from './styles';
 import { useQuery } from 'react-query';
+
+import { Header } from '../../components/Header';
+import { AboutBox, AboutContainer, AboutProfileText, AboutProfileTextTwo, AboutProfileTitle, BoxButton, UserImage } from './styles';
 import { Myself } from '../../types';
 import { Divider, FlexCol, FlexRow } from '../../Layout';
 import { SecundaryText } from '../../Layout/text';
 
 export function About() {
+  const [cardSelected, setCardSelected] = useState()
+
   const { data: user, isFetching: isFetchingUser } = useQuery<Myself>(
     'user',
     async () => {
@@ -36,7 +40,13 @@ export function About() {
           <li></li>
           <li></li>
         </ul>
-        <AboutBox>
+        <FlexCol style={{ rowGap: '10px' }}>
+          <BoxButton isActive={true}>ME</BoxButton>
+          <BoxButton isActive={false}>EXP</BoxButton>
+          <BoxButton isActive={false}>TECH</BoxButton>
+          <BoxButton isActive={false}>JOBS</BoxButton>
+        </FlexCol>
+        <AboutBox isActive={true}>
           <UserImage src={user?.avatar_url} alt="avatar" />
           <FlexCol style={{ width: '100%', alignItems: 'flex-start', rowGap: '8px', marginTop: '1rem' }}>
             <FlexRow>

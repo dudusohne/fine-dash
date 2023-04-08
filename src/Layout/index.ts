@@ -23,6 +23,14 @@ export const Divider = styled.hr<{ color?: string }>`
     ${(props) => (props.color ? `${props.color}` : props.theme.color.primary)};
 `;
 
+export const DividerVertical = styled.hr<{ color?: string }>`
+  height: 140px;
+  margin: 0px 16px 0px 16px;
+  align-self: center;
+  border-left: 1px solid
+    ${(props) => (props.color ? `${props.color}` : props.theme.color.primary)};
+`;
+
 export const Spinner = styled.div`
   width: 90px;
   height: 90px;

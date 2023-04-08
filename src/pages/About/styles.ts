@@ -78,7 +78,7 @@ export const AboutProfileTitle = styled.span`
   `}
 `;
 
-export const AboutBox = styled.div`
+export const AboutBox = styled.div<{ isActive: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -248,5 +248,24 @@ export const AboutContainer = styled.div`
       opacity: 0;
       border-radius: 50%;
     }
+  }
+`;
+
+export const BoxButton = styled.button<{ isActive: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Ubuntu';
+  font-weight: 700;
+
+  width: 60px;
+  height: 60px;
+  background-color: #ffc55a;
+  border-radius: 50px;
+  border: 1px solid white;
+
+  :hover {
+    cursor: pointer;
   }
 `;
