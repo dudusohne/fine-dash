@@ -168,7 +168,7 @@ export function Home() {
                 <Link to="https://github.com/dudusohne/fine-dash" target="_blank">
                   <BottomButtonWrapper>
                     <GithubREPO />
-                    <PrimaryText>This code repository on github</PrimaryText>
+                    <PrimaryText>This code</PrimaryText>
                   </BottomButtonWrapper>
                 </Link>
                 <BottomButtonWrapper onClick={() => navigate('/about')}>

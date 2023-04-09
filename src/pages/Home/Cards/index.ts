@@ -65,7 +65,7 @@ export const ThirdCard = styled.div`
   -webkit-box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: -1px 1px 57px -1px rgba(0, 0, 0, 0.31);
 
-  z-index: 0;
+  z-index: 1;
 
   img {
     margin: -20px 0px 0px -20px;

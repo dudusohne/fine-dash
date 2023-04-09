@@ -113,18 +113,21 @@ export const GithubREPO = styled(GithubSquare)`
 export const BottomButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  row-gap: 8px;
   align-items: center;
-  justify-content:  center;
-  width: fit-content;
-  max-width: 200px;
+  justify-content: center;
+  width: 100px;
   height: 100px;
-  border-radius: 8px;
   padding: 30px 10px 10px 10px;
-  background-color: white;
-  margin-top: -2rem;
+  background-color: ${(props) => props.theme.color.white};
+  margin-top: -1rem;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+  border: 2px solid ${(props) => props.theme.color.primary};
+  opacity: 0.9;
 
   :hover {
-    background-color: #aeaeae;
+    background-color: ${(props) => props.theme.color.tertiary};
     cursor: pointer;
   }
 `;

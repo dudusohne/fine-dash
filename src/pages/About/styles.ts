@@ -30,7 +30,7 @@ export const AboutProfileText = styled.span`
 export const AboutProfileTextTwo = styled.span`
   font-weight: bold;
   font-family: ${(props) => props.theme.fontFamily};
-  color: ${(props) => props.theme.color.greyDark};
+  color: ${(props) => props.theme.color.secondary};
 
   ${responsivity.us`
     font-size: 14px;
@@ -78,7 +78,7 @@ export const AboutProfileTitle = styled.span`
   `}
 `;
 
-export const AboutBox = styled.div<{ isActive: boolean }>`
+export const AboutBox = styled.div<{ color?: string }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +87,8 @@ export const AboutBox = styled.div<{ isActive: boolean }>`
   height: fit-content;
 
   border-radius: 50px;
-  background: linear-gradient(145deg, #363636, #404040);
+  background: ${(props) =>
+    props.color ? props.color : 'linear-gradient(145deg, #363636, #404040)'};
   box-shadow: 10px 10px 50px #181818;
   margin: 0px 50px 0 50px;
   padding: 20px;
@@ -113,6 +114,62 @@ export const AboutBox = styled.div<{ isActive: boolean }>`
 
   ${responsivity.md`
     width: 600px;
+  `}
+`;
+
+export const InnerBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #363636, #404040);
+  border-radius: 50px;
+  margin-bottom: -15px;
+
+  ${responsivity.us`
+    width: 100%;
+  `}
+
+  ${responsivity.ss`
+    width: 100%;
+  `}
+
+  ${responsivity.xs`
+    width: 100%;
+  `}
+
+  ${responsivity.sm`
+    width: 100%;
+  `}
+
+  ${responsivity.md`
+    width: 100%;
+  `}
+`;
+
+export const ReponsiveBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ReponsiveButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 10px;
+
+  ${responsivity.us`
+    margin-right: -40px;
+  `}
+
+  ${responsivity.md`
+    margin-right: 0px;
   `}
 `;
 
@@ -251,7 +308,7 @@ export const AboutContainer = styled.div`
   }
 `;
 
-export const BoxButton = styled.button<{ isActive: boolean }>`
+export const BoxButton = styled.div<{ isActive: boolean; color?: string }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,11 +318,48 @@ export const BoxButton = styled.button<{ isActive: boolean }>`
 
   width: 60px;
   height: 60px;
-  background-color: #ffc55a;
+  background-color: ${(props) => (props.color ? props.color : '#ffc55a')};
   border-radius: 50px;
   border: 1px solid white;
+  z-index: 10;
+  color: ${(props) => props.theme.color.primary};
+
+  transition: all 0.4s ease-in-out;
+
+  ${(props) =>
+    props.isActive &&
+    `
+        background-color: #3C3C3C;
+        transform: scale(1.1);
+        color: ${props.color || '#fff'};
+        border-color: ${props.color || '#ffc55a'};
+    `}
 
   :hover {
     cursor: pointer;
+    background-color: ${(props) => props.theme.color.primary};
+    border-color: ${(props) => (props.color ? props.color : '#ffc55a')};
+    color: white;
+    transform: scale(1.1);
   }
+
+  ${responsivity.us`
+    width: 40px;
+    height: 40px;
+  `}
+
+  ${responsivity.ss`
+    width: 45px;
+    height: 45px;
+  `}
+
+  ${responsivity.xs`
+    width: 50px;
+    height: 50px;
+  `}
+
+  ${responsivity.sm`
+    width: 60px;
+    height: 60px;
+  `}
 `;
