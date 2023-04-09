@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { responsivity } from '../../Layout/responsivity';
 import { GithubSquare } from '@styled-icons/fa-brands/GithubSquare';
-import Talk from '../../components/Svg/Talk';
 
 export const HomeContent = styled.div`
   display: flex;
@@ -107,26 +106,25 @@ export const GithubREPO = styled(GithubSquare)`
   `}
 
   ${responsivity.xs`
-    width: 40px;
+    width: 45px;
   `}
 `;
 
-export const StyledTalk = styled(Talk)`
-  width: 20px;
-  height: 20px;
+export const BottomButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:  center;
+  width: fit-content;
+  max-width: 200px;
+  height: 100px;
+  border-radius: 8px;
+  padding: 30px 10px 10px 10px;
+  background-color: white;
+  margin-top: -2rem;
 
-  ${responsivity.us`
-    width: 1px;
-    height: 1px;
-  `}
-
-  ${responsivity.ss`
-    width: 1px;
-    height: 1px;
-  `}
-
-  ${responsivity.xs`
-   width: 1px;
-    height: 1px;
-  `}
+  :hover {
+    background-color: #aeaeae;
+    cursor: pointer;
+  }
 `;

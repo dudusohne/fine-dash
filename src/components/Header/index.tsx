@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
 
 import { Myself } from '../../types';
@@ -18,6 +18,8 @@ import { LanguageChip } from '../ReposBox/components/LanguageChip/styles';
 import { Loader } from '../Loader';
 
 export function Header() {
+  const navigate = useNavigate();
+
   const { data: user, isFetching: isFetchingUser } = useQuery<Myself>(
     'user',
     async () => {
@@ -100,7 +102,7 @@ export function Header() {
                   <JobTitle>DEVELOPER</JobTitle>
                 </LanguageChip>
               </FlexCol>
-              <UserImage src={user?.avatar_url} alt="avatar" />
+              <UserImage src={user?.avatar_url} alt="avatar" onClick={() => navigate('/about')} />
             </FlexRow>
           ) : (
             <Loader width="40px" height="40px" />

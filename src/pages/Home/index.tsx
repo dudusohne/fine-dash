@@ -2,16 +2,19 @@ import { useRef } from 'react';
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 import { Header } from '../../components/Header';
-import { Container, Divider, DividerVertical, FlexCol, FlexRow, } from '../../Layout';
-import { GithubREPO, HomeTitleBIG, HomeTitleText, HomeWelcomeText, StyledTalk } from './styles';
+import { Container, Divider, DividerVertical, FlexRow, } from '../../Layout';
+import { BottomButtonWrapper, GithubREPO, HomeTitleBIG, HomeTitleText, HomeWelcomeText } from './styles';
 import { FirstCard, SecondCard, ThirdCard } from './Cards';
 import { PrimaryText } from '../../Layout/text';
-import Ribbon from '../../components/Svg/Ribbon';
 import { ReactLogo } from 'styled-icons/fa-brands';
 import { Javascript, Typescript, Vuejs } from 'styled-icons/boxicons-logos';
 import { Styledcomponents, Vite } from 'styled-icons/simple-icons';
+import { Link, useNavigate } from 'react-router-dom';
+import BasketBall from '../../components/Svg/BasketBall';
 
 export function Home() {
+  const navigate = useNavigate()
+
   const parallax = useRef<IParallax>(null!)
 
   return (
@@ -146,21 +149,33 @@ export function Home() {
             speed={-0}
             style={{
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
             }}
             onClick={() => parallax.current.scrollTo(0)}>
             <ThirdCard>
               <HomeTitleText style={{ color: 'black' }}>
-                This app code is <HomeTitleBIG style={{ color: '#da680c' }}> public </HomeTitleBIG>
-                and you can go to it in the links below. <HomeTitleText style={{ color: '#c26e29' }}>
-                  Besides that you can
-                  also send me feedback about this project or just reach me out.
-                </HomeTitleText>
+                This app code is <HomeTitleBIG style={{ color: '#c26e29' }}> public </HomeTitleBIG>
+                and you can go to it in the links below.
               </HomeTitleText>
-              {/* <Divider color="#087E8B" /> */}
-
+              <HomeTitleText style={{ marginTop: '10px', color: '#c26e29' }}>
+                Besides that you can
+                also send me feedback about this project or just reach me out.
+              </HomeTitleText>
             </ThirdCard>
+              <FlexRow style={{ columnGap: '16px' }} onClick={(e: any) => e.stopPropagation()}>
+                <Link to="https://github.com/dudusohne/fine-dash" target="_blank">
+                  <BottomButtonWrapper>
+                    <GithubREPO />
+                    <PrimaryText>This code repository on github</PrimaryText>
+                  </BottomButtonWrapper>
+                </Link>
+                <BottomButtonWrapper onClick={() => navigate('/about')}>
+                  <BasketBall />
+                  <PrimaryText>Reach me</PrimaryText>
+                </BottomButtonWrapper>
+              </FlexRow>
           </ParallaxLayer>
         </Parallax>
       </div>

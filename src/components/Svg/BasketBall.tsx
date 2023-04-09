@@ -3,7 +3,7 @@ function BasketBall() {
     return (
         <>
             <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
-                width="300px" height="300px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xmlSpace="preserve">
+                width="50px" height="50px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xmlSpace="preserve">
                 <g>
                     <path fill="#394240" d="M54.628,9.377c-12.495-12.5-32.761-12.5-45.256,0c-12.496,12.492-12.496,32.757,0,45.249
 		c12.496,12.5,32.761,12.5,45.256,0C67.124,42.134,67.124,21.869,54.628,9.377z M55.878,30.729
