@@ -69,16 +69,12 @@ export function About() {
                   <Divider style={{ opacity: 0.1, margin: '20px 0px 10px 0px' }} />
                   <SecundaryText>Languages/ tools</SecundaryText>
                   <FlexRow style={{ columnGap: '10px', marginTop: '10px' }}>
-                    <img src={'/typescript.png'} style={{ width: '30px' }} />
-                    <img src={'/javascript.png'} style={{ width: '30px' }} />
-                    <img src={'/react.png'} style={{ width: '30px' }} />
+                   
                   </FlexRow>
                   <Divider style={{ opacity: 0.1, margin: '20px 0px 10px 0px' }} />
                   <SecundaryText>Get in touch with me</SecundaryText>
                   <FlexRow style={{ columnGap: '10px', marginTop: '10px' }}>
-                    <img src={'/instagram.png'} style={{ width: '58px', height: '58px' }} />
-                    <img src={'/linkedin.png'} style={{ width: '58px', height: '58px' }} />
-                    <img src={'/mail.png'} style={{ width: '58px', height: '58px' }} />
+                    
                   </FlexRow>
                 </InnerBox>
               </AboutBox>

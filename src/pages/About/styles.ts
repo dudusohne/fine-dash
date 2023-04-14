@@ -197,6 +197,7 @@ export const AboutContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-line-clamp: none;
   }
 
   .circles {
@@ -216,6 +217,16 @@ export const AboutContainer = styled.div`
     background: rgba(255, 255, 255, 0.2);
     animation: animate 25s linear infinite;
     bottom: -150px;
+  }
+
+  @media (max-width: 480px) {
+    .circles {
+      display: none;
+    }
+    
+    .circles li {
+      display: none;
+    }
   }
 
   .circles li:nth-child(1) {

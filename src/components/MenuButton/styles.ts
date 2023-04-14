@@ -4,7 +4,7 @@ import { Home } from '@styled-icons/fluentui-system-filled/Home';
 import { PersonFill } from '@styled-icons/bootstrap/PersonFill';
 import { responsivity } from '../../Layout/responsivity';
 
-export const MenuButtonContainer = styled.button<{ isActive: boolean }>`
+export const MenuButtonContainer = styled.button<{ isactive: boolean }>`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -23,7 +23,7 @@ export const MenuButtonContainer = styled.button<{ isActive: boolean }>`
   }
 
   ${(props) =>
-    props.isActive &&
+    props.isactive &&
     `
         background-color: #3C3C3C;
         border-color: #59d3e1;
@@ -55,12 +55,12 @@ export const MenuButtonContainer = styled.button<{ isActive: boolean }>`
   `}
 `;
 
-export const GithubIcon = styled(Github)<{ isActive: boolean }>`
+export const GithubIcon = styled(Github)<{ isactive?: boolean }>`
   color: ${(props) => props.theme.color.primary};
   transition: all 0.2s ease;
 
   ${(props) =>
-    props.isActive &&
+    props.isactive &&
     `
         color: #59d3e1;
         width: 40px;
@@ -80,11 +80,11 @@ export const GithubIcon = styled(Github)<{ isActive: boolean }>`
   `}
 `;
 
-export const HomeIcon = styled(Home)<{ isActive: boolean }>`
+export const HomeIcon = styled(Home)<{ isactive: boolean }>`
   color: ${(props) => props.theme.color.primary};
 
   ${(props) =>
-    props.isActive &&
+    props.isactive &&
     `
         color: #59d3e1;
         width: 40px;
@@ -102,11 +102,11 @@ export const HomeIcon = styled(Home)<{ isActive: boolean }>`
   `}
 `;
 
-export const AboutIcon = styled(PersonFill)<{ isActive: boolean }>`
+export const AboutIcon = styled(PersonFill)<{ isactive: boolean }>`
   color: ${(props) => props.theme.color.primary};
 
   ${(props) =>
-    props.isActive &&
+    props.isactive &&
     `
         color: #59d3e1;
         width: 40px;
