@@ -17,6 +17,16 @@ export function Home() {
 
   const parallax = useRef<IParallax>(null!)
 
+  fetch('https://api.tarkov.dev/graphql', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    }
+  })
+    .then(r => r.json())
+    .then(data => console.log('data returned:', data));
+
   return (
     <Container>
       <Header />
@@ -164,18 +174,18 @@ export function Home() {
                 also send me feedback about this project or just reach me out.
               </HomeTitleText>
             </ThirdCard>
-              <FlexRow style={{ columnGap: '16px' }} onClick={(e: any) => e.stopPropagation()}>
-                <Link to="https://github.com/dudusohne/fine-dash" target="_blank">
-                  <BottomButtonWrapper>
-                    <GithubREPO />
-                    <PrimaryText>This code</PrimaryText>
-                  </BottomButtonWrapper>
-                </Link>
-                <BottomButtonWrapper onClick={() => navigate('/about')}>
-                  <BasketBall />
-                  <PrimaryText>Reach me</PrimaryText>
+            <FlexRow style={{ columnGap: '16px' }} onClick={(e: any) => e.stopPropagation()}>
+              <Link to="https://github.com/dudusohne/fine-dash" target="_blank">
+                <BottomButtonWrapper>
+                  <GithubREPO />
+                  <PrimaryText>This code</PrimaryText>
                 </BottomButtonWrapper>
-              </FlexRow>
+              </Link>
+              <BottomButtonWrapper onClick={() => navigate('/about')}>
+                <BasketBall />
+                <PrimaryText>Reach me</PrimaryText>
+              </BottomButtonWrapper>
+            </FlexRow>
           </ParallaxLayer>
         </Parallax>
       </div>
