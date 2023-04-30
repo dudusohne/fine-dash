@@ -17,16 +17,6 @@ export function Home() {
 
   const parallax = useRef<IParallax>(null!)
 
-  fetch('https://api.tarkov.dev/graphql', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    }
-  })
-    .then(r => r.json())
-    .then(data => console.log('data returned:', data));
-
   return (
     <Container>
       <Header />
@@ -108,8 +98,8 @@ export function Home() {
                     <HomeTitleText style={{ color: '#ffc55a' }}> javascript </HomeTitleText>
                     fullstack developer.
                     Most of my experience is at the front-end
-                    and already worked with a lot of cool things like
-                    <HomeTitleText style={{ color: '#087E8B' }}> typescript</HomeTitleText>, vanilla js and also with
+                    and already worked with a few cool things like
+                    <HomeTitleText style={{ color: '#087E8B' }}> typescript</HomeTitleText>, node js and also with
                     <HomeTitleText style={{ color: '#42B983' }}> vue </HomeTitleText>and
                     <HomeTitleText style={{ color: '#59d3e1' }}> react</HomeTitleText>.
                   </HomeTitleText>
