@@ -3,10 +3,12 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 
 import { Header } from '../../components/Header';
-import { AboutBox, AboutContainer, AboutProfileText, AboutProfileTextTwo, AboutProfileTitle, BoxButton, InnerBox, ReponsiveBox, ReponsiveButtonWrapper, UserImage } from './styles';
+import { AboutBox, AboutContainer, AboutProfileTextTwo, BoxButton, InnerBox, ReponsiveBox, ReponsiveButtonWrapper, UserImage } from './styles';
 import { Myself } from '../../types';
 import { Divider, FlexCol, FlexRow } from '../../Layout';
 import { SecundaryText } from '../../Layout/text';
+import { Vuejs, Reactjs } from '@styled-icons/remix-fill'
+import { Javascript } from '@styled-icons/boxicons-logos/Javascript'
 
 export function About() {
   const [cardSelected, setCardSelected] = useState<string>('ME')
@@ -44,8 +46,8 @@ export function About() {
           <ReponsiveButtonWrapper>
             <BoxButton color="#ffc55a" isActive={cardSelected === 'ME'} onClick={() => setCardSelected('ME')}>ME</BoxButton>
             <BoxButton color="#FF5A5F" isActive={cardSelected === 'EXP'} onClick={() => setCardSelected('EXP')}>EXP</BoxButton>
-            <BoxButton color="#59d3e1" isActive={cardSelected === 'TECH'} onClick={() => setCardSelected('TECH')}>TECH</BoxButton>
-            <BoxButton color="#42B983" isActive={cardSelected === 'JOBS'} onClick={() => setCardSelected('JOBS')}>JOBS</BoxButton>
+            {/* <BoxButton color="#59d3e1" isActive={cardSelected === 'TECH'} onClick={() => setCardSelected('TECH')}>TECH</BoxButton>
+            <BoxButton color="#42B983" isActive={cardSelected === 'JOBS'} onClick={() => setCardSelected('JOBS')}>JOBS</BoxButton> */}
           </ReponsiveButtonWrapper>
           {cardSelected === 'ME' ?
             <>
@@ -68,13 +70,15 @@ export function About() {
                   </FlexCol>
                   <Divider style={{ opacity: 0.1, margin: '20px 0px 10px 0px' }} />
                   <SecundaryText>Languages/ tools</SecundaryText>
-                  <FlexRow style={{ columnGap: '10px', marginTop: '10px' }}>
-                   
+                  <FlexRow style={{ columnGap: '10px', marginTop: '10px', width: '100%' }}>
+                    <Javascript height="2rem" width="2rem" color="##ffc55a" />
+                    <Reactjs height="2rem" width="2rem" color="#59d3e1" />
+                    <Vuejs height="2rem" width="2rem" color="#42B983" />
                   </FlexRow>
                   <Divider style={{ opacity: 0.1, margin: '20px 0px 10px 0px' }} />
                   <SecundaryText>Get in touch with me</SecundaryText>
                   <FlexRow style={{ columnGap: '10px', marginTop: '10px' }}>
-                    
+
                   </FlexRow>
                 </InnerBox>
               </AboutBox>

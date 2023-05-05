@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 import { Header } from '../../components/Header';
-import { Container, Divider, DividerVertical, FlexRow, } from '../../Layout';
+import { Container, Divider, FlexRow, } from '../../Layout';
 import { BottomButtonWrapper, GithubREPO, HomeTitleBIG, HomeTitleText, HomeWelcomeText } from './styles';
 import { FirstCard, SecondCard, ThirdCard } from './Cards';
 import { PrimaryText } from '../../Layout/text';
@@ -99,7 +99,8 @@ export function Home() {
                     fullstack developer.
                     Most of my experience is at the front-end
                     and already worked with a few cool things like
-                    <HomeTitleText style={{ color: '#087E8B' }}> typescript</HomeTitleText>, node js and also with
+                    <HomeTitleText style={{ color: '#ffc55a' }}> node js</HomeTitleText>
+                    , <HomeTitleText style={{ color: '#087E8B' }}> typescript</HomeTitleText> and also with
                     <HomeTitleText style={{ color: '#42B983' }}> vue </HomeTitleText>and
                     <HomeTitleText style={{ color: '#59d3e1' }}> react</HomeTitleText>.
                   </HomeTitleText>
