@@ -128,6 +128,8 @@ export const InnerBox = styled.div`
   background: linear-gradient(145deg, #363636, #404040);
   border-radius: 50px;
   margin-bottom: -15px;
+  color: white;
+  font-family: 'Ubuntu';
 
   ${responsivity.us`
     width: 100%;
@@ -223,7 +225,7 @@ export const AboutContainer = styled.div`
     .circles {
       display: none;
     }
-    
+
     .circles li {
       display: none;
     }
