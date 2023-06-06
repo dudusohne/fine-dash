@@ -1,4 +1,4 @@
-FROM node:16.14.2 as build-stage
+FROM node:lts-alpine as build-stage
 
 WORKDIR /usr/
 
