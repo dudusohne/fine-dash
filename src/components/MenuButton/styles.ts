@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Github } from '@styled-icons/bootstrap/Github';
 import { Home } from '@styled-icons/fluentui-system-filled/Home';
 import { PersonFill } from '@styled-icons/bootstrap/PersonFill';
-import { responsivity } from '../../Layout/responsivity';
+import { responsivity } from '../../hooks/useResponsivity';
 
 export const MenuButtonContainer = styled.button<{ isactive: boolean }>`
   display: flex;

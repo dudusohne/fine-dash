@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { responsivity } from '../../Layout/responsivity';
 import { GithubSquare } from '@styled-icons/fa-brands/GithubSquare';
+import { responsivity } from '../../hooks/useResponsivity';
 
 export const HomeContent = styled.div`
   display: flex;

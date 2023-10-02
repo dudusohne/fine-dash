@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { float, slide } from '../../theme/animations';
 import { animated } from '@react-spring/web';
-import { responsivity } from '../../Layout/responsivity';
+import { responsivity } from '../../hooks/useResponsivity';
 
 export const HeaderWrapper = styled.header`
   display: flex;

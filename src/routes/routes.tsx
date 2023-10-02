@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Repositories } from '../pages/Repositories';
 import { Home } from '../pages/Home';
 import { NotFound404 } from '../pages/NotFound404';
-import { About } from '../pages/About';
+import { About } from '../pages/About/index';
 
 export function AppRoutes() {
   return (
