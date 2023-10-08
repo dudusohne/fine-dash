@@ -1,6 +1,6 @@
 import { animated } from '@react-spring/web';
 import styled from 'styled-components';
-import { responsivity } from '../../Layout/responsivity';
+import { responsivity } from '../../hooks/useResponsivity';
 
 export const TimeContainer = styled(animated.div)`
   display: flex;

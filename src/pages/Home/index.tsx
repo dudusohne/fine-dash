@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
 
 import { Header } from '../../components/Header';
