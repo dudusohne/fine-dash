@@ -3,6 +3,7 @@ import { animated } from '@react-spring/web';
 import { float } from '../../theme/animations';
 import { responsivity } from '../../hooks/useResponsivity';
 import { Briefcase } from '@styled-icons/boxicons-solid/Briefcase';
+import { PersonDashFill } from '@styled-icons/bootstrap';
 import { ChevronDown } from '@styled-icons/entypo/ChevronDown';
 import { ChevronUp } from '@styled-icons/entypo/ChevronUp';
 import { PrimaryText } from '../../Layout/text';
@@ -183,7 +184,23 @@ export const BarSkills = styled.span`
 `;
 
 export const BriefcaseIcon = styled(Briefcase)`
-  color: ${(props) => props.theme.color.fourth};
+  color: ${(props) => props.theme.color.fourthActive};
+
+  ${responsivity.us`
+    width: 20px;
+  `}
+
+  ${responsivity.ss`
+    width: 25px;
+  `}
+
+  ${responsivity.xs`
+    width: 30px;
+  `}
+`;
+
+export const PersonListIcon = styled(PersonDashFill)`
+  color: ${(props) => props.theme.color.fourthActive};
 
   ${responsivity.us`
     width: 20px;
@@ -199,7 +216,7 @@ export const BriefcaseIcon = styled(Briefcase)`
 `;
 
 export const ChevronDownIcon = styled(ChevronDown)`
-  color: ${(props) => props.theme.color.fourth};
+  color: ${(props) => props.theme.color.fourthActive};
 
   ${responsivity.us`
     width: 20px;
@@ -215,7 +232,7 @@ export const ChevronDownIcon = styled(ChevronDown)`
 `;
 
 export const ChevronUpIcon = styled(ChevronUp)`
-  color: ${(props) => props.theme.color.fourth};
+  color: ${(props) => props.theme.color.fourthActive};
 
   ${responsivity.us`
     width: 20px;
@@ -230,6 +247,13 @@ export const ChevronUpIcon = styled(ChevronUp)`
   `}
 `;
 
+export const MenuContainer = styled.div`
+  &:nth-child(1) {
+    border-bottom: 1px solid ${(props) => props.theme.color.greyDark};
+    padding-bottom: 16px;
+  }
+`
+
 export const AboutMenuButton = styled.button`
   display: flex;
   flex-direction: row;
@@ -238,6 +262,7 @@ export const AboutMenuButton = styled.button`
   column-gap: 8px;
   border: none;
   background: none;
+  width: 100%;
 
   :hover {
     cursor: pointer;

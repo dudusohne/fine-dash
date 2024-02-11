@@ -13,7 +13,9 @@ import {
     ChevronUpIcon,
     ItemDescription,
     ItemTitle,
+    MenuContainer,
     NameTitle,
+    PersonListIcon,
     ReponsiveBox,
     ScreenCentralized,
     SectionTitle,
@@ -30,6 +32,7 @@ interface AboutMenuProps {
     text?: string;
     subtext?: string;
     jobs?: Record<string, string | number>[];
+    icon?: JSX.Element;
 }
 
 export function About() {
@@ -47,12 +50,14 @@ export function About() {
         {
             id: 0,
             name: 'Resume',
+            icon: <PersonListIcon />,
             text: 'As a software engineer, my expertise primarily lies in JavaScript, with extensive experience in TypeScript, React, and Vue.js.',
             subtext: 'I also have proficiency in Python and Django for backend development and a basic understanding of MySQL for database management.Additionally, I have a foundational knowledge of AWS, Firebase, and Supabase for cloud services.'
         },
         {
             id: 1,
             name: 'Experiences',
+            icon: <BriefcaseIcon />,
             jobs: [
                 {
                     id: 0,
@@ -67,7 +72,7 @@ export function About() {
                 {
                     id: 2,
                     title: 'Frontend Developer | Super Ensino Outubro de 2022 até o present',
-                    description: 'eact + Typescript + principais libs do environment React.Utilizando boas práticas, construindo apps escaláveis e até projetos com microfrontends. Consumindo apis, programando as vezes em python no backend.'
+                    description: 'React + Typescript + principais libs do environment React.Utilizando boas práticas, construindo apps escaláveis e até projetos com microfrontends. Consumindo apis, programando as vezes em python no backend.'
                 },
             ]
         }
@@ -107,12 +112,12 @@ export function About() {
                         <BarSkills>Python</BarSkills>
                     </BarSkillsContainer>
 
-                    <FlexCol style={{ padding: '16px', rowGap: '32px', width: '100%' }}>
+                    <FlexCol style={{ padding: '16px', width: '100%' }}>
                         {menus.map((item: AboutMenuProps, index: number) =>
-                            <>
+                            <MenuContainer>
                                 <AboutMenuButton onClick={() => handleMenuSelect(item)}>
                                     <FlexRow style={{ columnGap: '16px' }}>
-                                        <BriefcaseIcon />
+                                        {item.icon}
                                         <SectionTitle>{item.name}</SectionTitle>
                                     </FlexRow>
                                     {menu?.id === item.id ?
@@ -139,7 +144,7 @@ export function About() {
                                         )}
                                     </>
                                 }
-                            </>
+                            </MenuContainer>
                         )}
                     </FlexCol>
                 </ReponsiveBox> :
