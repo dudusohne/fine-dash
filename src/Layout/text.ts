@@ -8,7 +8,7 @@ export const PrimaryText = styled.span`
   color: ${(props) => props.theme.color.primary};
 
   ${responsivity.us`
-    font-size: 8px;
+    font-size: 12px;
     font-weight: light;
   `}
 
@@ -33,7 +33,7 @@ export const SecundaryText = styled.span`
   color: ${(props) => props.theme.color.greyDark};
 
   ${responsivity.us`
-    font-size: 8px;
+    font-size: 12px;
     font-weight: light;
   `}
 
@@ -57,7 +57,7 @@ export const PText = styled.span`
   color: ${(props) => props.theme.color.greyDark};
 
   ${responsivity.us`
-    font-size: 8px;
+    font-size: 10px;
     font-weight: light;
   `}
 

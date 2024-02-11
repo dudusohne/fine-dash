@@ -7,26 +7,29 @@ import {
     AboutContainer,
     AboutMenuButton,
     BarSkills,
+    BarSkillsContainer,
     BriefcaseIcon,
     ChevronDownIcon,
     ChevronUpIcon,
     ItemDescription,
     ItemTitle,
+    NameTitle,
     ReponsiveBox,
     ScreenCentralized,
     SectionTitle,
     UserImage,
 } from './styles';
 import { Myself } from '../../types';
-import { FlexCol } from '../../Layout';
+import { FlexCol, FlexRow } from '../../Layout';
 import { PrimaryText, SecundaryText } from '../../Layout/text';
 import { Loader } from '../../components/Loader';
 
 interface AboutMenuProps {
-    id?: number;
-    name?: string;
+    id: number;
+    name: string;
     text?: string;
-    jobs?: any;
+    subtext?: string;
+    jobs?: Record<string, string | number>[];
 }
 
 export function About() {
@@ -44,7 +47,8 @@ export function About() {
         {
             id: 0,
             name: 'Resume',
-            text: 'As a software engineer, my expertise primarily lies in JavaScript, with extensive experience in TypeScript, React, and Vue.js.I also have proficiency in Python and Django for backend development and a basic understanding of MySQL for database management.Additionally, I have a foundational knowledge of AWS, Firebase, and Supabase for cloud services.'
+            text: 'As a software engineer, my expertise primarily lies in JavaScript, with extensive experience in TypeScript, React, and Vue.js.',
+            subtext: 'I also have proficiency in Python and Django for backend development and a basic understanding of MySQL for database management.Additionally, I have a foundational knowledge of AWS, Firebase, and Supabase for cloud services.'
         },
         {
             id: 1,
@@ -84,35 +88,33 @@ export function About() {
             <Header />
             {!isFetchingUser ?
                 <ReponsiveBox>
-                    <FlexCol style={{ rowGap: '16px' }}>
+                    <BarSkillsContainer>
                         <UserImage src={user?.avatar_url} alt="avatar" />
-                        <PrimaryText>Eduardo Sohne</PrimaryText>
-                        <FlexCol style={{ rowGap: '4px' }}>
-                            <SecundaryText>Developer</SecundaryText>
-                            <SecundaryText>32y</SecundaryText>
-                            <SecundaryText>Gramado/RS</SecundaryText>
-                        </FlexCol>
+                        <NameTitle>Eduardo Sohne</NameTitle>
+                        <SecundaryText>Developer</SecundaryText>
+                        <SecundaryText>32y</SecundaryText>
+                        <SecundaryText>Gramado/RS</SecundaryText>
 
-                        <FlexCol style={{ rowGap: '4px' }}>
-                            <BarSkills>Javascript</BarSkills>
-                            <BarSkills>Typescript</BarSkills>
-                            <BarSkills>React.js</BarSkills>
-                            <BarSkills>Next.js</BarSkills>
-                            <BarSkills>Vue 3</BarSkills>
-                            <BarSkills>Nuxt</BarSkills>
-                            <BarSkills>Html/css/sass</BarSkills>
-                            <BarSkills>Firebase / faunadb</BarSkills>
-                            <BarSkills>React Native</BarSkills>
-                            <BarSkills>Python</BarSkills>
-                        </FlexCol>
-                    </FlexCol>
+                        <BarSkills>Javascript</BarSkills>
+                        <BarSkills>Typescript</BarSkills>
+                        <BarSkills>React.js</BarSkills>
+                        <BarSkills>Next.js</BarSkills>
+                        <BarSkills>Vue 3</BarSkills>
+                        <BarSkills>Nuxt</BarSkills>
+                        <BarSkills>Html/css/sass</BarSkills>
+                        <BarSkills>Firebase / faunadb</BarSkills>
+                        <BarSkills>React Native</BarSkills>
+                        <BarSkills>Python</BarSkills>
+                    </BarSkillsContainer>
 
                     <FlexCol style={{ padding: '16px', rowGap: '32px', width: '100%' }}>
                         {menus.map((item: AboutMenuProps, index: number) =>
                             <>
                                 <AboutMenuButton onClick={() => handleMenuSelect(item)}>
-                                    <BriefcaseIcon />
-                                    <SectionTitle>{item.name}</SectionTitle>
+                                    <FlexRow style={{ columnGap: '16px' }}>
+                                        <BriefcaseIcon />
+                                        <SectionTitle>{item.name}</SectionTitle>
+                                    </FlexRow>
                                     {menu?.id === item.id ?
                                         <ChevronUpIcon /> :
                                         <ChevronDownIcon />
