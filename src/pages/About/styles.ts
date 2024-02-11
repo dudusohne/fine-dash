@@ -54,11 +54,11 @@ export const NameTitle = styled(PrimaryText)`
   color: ${(props) => props.theme.color.secondary};
 
   ${responsivity.us`
-    font-size: 16px;
+    font-size: 18px;
   `}
 
   ${responsivity.ss`
-    font-size: 18px;
+    font-size: 22px;
   `}
 `
 
@@ -87,10 +87,37 @@ export const SectionTitle = styled.h1`
   `}
 `;
 
-export const ItemTitle = styled.span`
+export const ItemTitle = styled.h1`
   font-weight: bold;
   font-family: ${(props) => props.theme.fontFamily};
   color: ${(props) => props.theme.color.secondary};
+  letter-spacing: 3px;
+
+  ${responsivity.us`
+    font-size: 16px;
+    font-weight: light;
+  `}
+
+  ${responsivity.xs`
+    font-size: 16px;
+    font-weight: light;
+  `}
+
+  ${responsivity.sm`
+    font-size: 16px;
+  `}
+
+  ${responsivity.md`
+    font-size: 18px;
+  `}
+`;
+
+export const ItemText = styled.span`
+  font-weight: medium;
+  font-family: ${(props) => props.theme.fontFamily};
+  color: ${(props) => props.theme.color.secondary};
+  letter-spacing: 1px;
+  line-height: 22px;
 
   ${responsivity.us`
     font-size: 16px;
@@ -139,7 +166,7 @@ export const ItemDescription = styled.p`
 export const BarSkillsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 4px;
+  align-items: center;
   padding: 32px 24px;
  
   border-radius: 50px;
@@ -150,11 +177,25 @@ export const BarSkillsContainer = styled.div`
   ${responsivity.us`
     width: 100%;
     flex-direction: row;
+    column-gap: 16px;
   `}
 
   ${responsivity.sm`
     max-width: 180px;
     flex-direction: column;
+    row-gap: 16px;
+  `}
+`
+
+export const BarSkillsInnerContainer = styled.div`
+  flex-direction: column;
+
+  ${responsivity.us`
+    display: none;
+  `}
+
+  ${responsivity.sm`
+    display: flex;
   `}
 `
 

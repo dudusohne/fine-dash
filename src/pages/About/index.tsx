@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
@@ -8,10 +8,12 @@ import {
     AboutMenuButton,
     BarSkills,
     BarSkillsContainer,
+    BarSkillsInnerContainer,
     BriefcaseIcon,
     ChevronDownIcon,
     ChevronUpIcon,
     ItemDescription,
+    ItemText,
     ItemTitle,
     MenuContainer,
     NameTitle,
@@ -23,7 +25,7 @@ import {
 } from './styles';
 import { Myself } from '../../types';
 import { FlexCol, FlexRow } from '../../Layout';
-import { PrimaryText, SecundaryText } from '../../Layout/text';
+import { SecundaryText } from '../../Layout/text';
 import { Loader } from '../../components/Loader';
 
 interface AboutMenuProps {
@@ -72,7 +74,7 @@ export function About() {
                 {
                     id: 2,
                     title: 'Frontend Developer | Super Ensino Outubro de 2022 até o present',
-                    description: 'React + Typescript + principais libs do environment React.Utilizando boas práticas, construindo apps escaláveis e até projetos com microfrontends. Consumindo apis, programando as vezes em python no backend.'
+                    description: 'Desenvolvimento web e mobile, utilizando todo eco-sistema do React/React Native pra construir apps atuais, rápidos e escaláveis.'
                 },
             ]
         }
@@ -95,24 +97,31 @@ export function About() {
                 <ReponsiveBox>
                     <BarSkillsContainer>
                         <UserImage src={user?.avatar_url} alt="avatar" />
-                        <NameTitle>Eduardo Sohne</NameTitle>
-                        <SecundaryText>Developer</SecundaryText>
-                        <SecundaryText>32y</SecundaryText>
-                        <SecundaryText>Gramado/RS</SecundaryText>
+                        <FlexCol style={{ rowGap: '8px' }}>
+                            <NameTitle>Eduardo Sohne</NameTitle>
+                            <SecundaryText>Software Engineer</SecundaryText>
+                            <SecundaryText style={{ opacity: '0.7' }}>Gramado/RS</SecundaryText>
+                            <SecundaryText style={{ opacity: '0.5' }}>32y</SecundaryText>
+                        </FlexCol>
+                        <BarSkillsInnerContainer>
+                            <BarSkills style={{ color: '#FF5A5F' }}>Already worked w/</BarSkills>
+                            <BarSkills>Javascript</BarSkills>
+                            <BarSkills>Typescript</BarSkills>
+                            <BarSkills>React.js</BarSkills>
+                            <BarSkills>Next.js</BarSkills>
+                            <BarSkills>Vue 3</BarSkills>
+                            <BarSkills>Nuxt</BarSkills>
+                            <BarSkills>Html/css/sass</BarSkills>
+                            <BarSkills>Firebase / faunadb</BarSkills>
+                            <BarSkills>React Native</BarSkills>
+                            <BarSkills>Expo</BarSkills>
+                            <BarSkills>Python</BarSkills>
+                            <BarSkills>Django</BarSkills>
+                        </BarSkillsInnerContainer>
 
-                        <BarSkills>Javascript</BarSkills>
-                        <BarSkills>Typescript</BarSkills>
-                        <BarSkills>React.js</BarSkills>
-                        <BarSkills>Next.js</BarSkills>
-                        <BarSkills>Vue 3</BarSkills>
-                        <BarSkills>Nuxt</BarSkills>
-                        <BarSkills>Html/css/sass</BarSkills>
-                        <BarSkills>Firebase / faunadb</BarSkills>
-                        <BarSkills>React Native</BarSkills>
-                        <BarSkills>Python</BarSkills>
                     </BarSkillsContainer>
 
-                    <FlexCol style={{ padding: '16px', width: '100%' }}>
+                    <FlexCol style={{ padding: '16px', width: '100%', alignSelf: 'flex-start' }}>
                         {menus.map((item: AboutMenuProps, index: number) =>
                             <MenuContainer>
                                 <AboutMenuButton onClick={() => handleMenuSelect(item)}>
@@ -126,9 +135,9 @@ export function About() {
                                     }
                                 </AboutMenuButton>
                                 {menu?.id === item.id && item?.text &&
-                                    <ItemTitle>
+                                    <ItemText>
                                         {item.text}
-                                    </ItemTitle>
+                                    </ItemText>
                                 }
                                 {menu?.id === item.id && item?.jobs &&
                                     <>
