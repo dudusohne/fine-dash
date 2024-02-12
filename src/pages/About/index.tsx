@@ -121,9 +121,9 @@ export function About() {
 
                     </BarSkillsContainer>
 
-                    <FlexCol style={{ padding: '16px', width: '100%', alignSelf: 'flex-start' }}>
+                    <FlexCol style={{ padding: '16px', width: '100%', alignSelf: 'flex-start', maxWidth: '1000px' }}>
                         {menus.map((item: AboutMenuProps, index: number) =>
-                            <MenuContainer>
+                            <MenuContainer key={index}>
                                 <AboutMenuButton onClick={() => handleMenuSelect(item)}>
                                     <FlexRow style={{ columnGap: '16px' }}>
                                         {item.icon}
